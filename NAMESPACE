@@ -1,0 +1,14 @@
+export("plotuScree", 
+       "nScree",
+       "plotnScree", 
+       "parallel",
+       "plotParallel"
+       )
+
+
+
+
+
+
+
+
