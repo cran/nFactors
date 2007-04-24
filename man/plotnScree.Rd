@@ -2,11 +2,11 @@
 
 \alias{plotnScree}
 
-\title{ SCREE PLOT ACCORDING TO A nScree OBJECT CLASS }
+\title{ Scree Plot According to a nScree Object Class }
 
 \description{
   Plot a scree plot adding information about a non graphical \code{nScree} analysis.
-}
+ }
 
 \usage{
  plotnScree(nScree, 
@@ -15,7 +15,7 @@
             xlab   = "Component",
             main   = "Non Graphical Solutions to Scree Test"
             )                    
-}
+ }
 
 \arguments{
   \item{nScree}{  Results of a previous nScree analysis }
@@ -23,22 +23,22 @@
   \item{xlab}{    Label of the x axis (default to "Component") }
   \item{ylab}{    Label of the y axis (default to "Eigenvalue") }
   \item{main}{    Main title (default to "Non Graphical Solutions to the Scree Test") }
-}
+ }
 
 \value{
  Nothing returned.
-}
+ }
 
 \references{ 
-Raiche, G., Riopel, M. and Blais, J.-G. (2006). \emph{Non graphical solutions for the Cattell's scree test}. 
-Paper presented at the International Annual meeting of the Psychometric Society, Montreal. 
-[\url{http://www.er.uqam.ca/nobel/r17165/RECHERCHE/COMMUNICATIONS/}] 
-}
+ Raiche, G., Riopel, M. and Blais, J.-G. (2006). \emph{Non graphical solutions for the Cattell's scree test}.
+ Paper presented at the International Annual meeting of the Psychometric Society, Montreal.
+ [\url{http://www.er.uqam.ca/nobel/r17165/RECHERCHE/COMMUNICATIONS/}]
+ }
 
 \author{ 
     Gilles Raiche, Universite du Quebec a Montreal
     \email{raiche.gilles@uqam.ca}, \url{http://www.er.uqam.ca/nobel/r17165/}
-}
+ }
 
 
 \seealso{ 
@@ -46,7 +46,7 @@ Paper presented at the International Annual meeting of the Psychometric Society,
  \code{\link{nScree}},
  \code{\link{plotParallel}}, 
  \code{\link{parallel}}  
-}
+ }
 
 \examples{
 ## INITIALISATION
@@ -75,8 +75,7 @@ Paper presented at the International Annual meeting of the Psychometric Society,
  
 ## PLOT ACCORDING TO THE nScree CLASS 
  plotnScree(results)
-
-
-}
+ }
+ 
 \keyword{ multivariate }
 

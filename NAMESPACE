@@ -2,7 +2,13 @@ export("plotuScree",
        "nScree",
        "plotnScree", 
        "parallel",
-       "plotParallel"
+       "plotParallel",
+       "componentAxis",
+       "diagReplace",
+       "iterativePrincipalAxis",
+       "principalAxis",
+       "principalComponents",
+       "rRecovery" 
        )
 
 

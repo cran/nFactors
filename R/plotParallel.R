@@ -21,7 +21,7 @@ function(x,
                 ylab = ylab) 
     }
     
-  if (length(eig) > 1) {uScree(eig, main = main, xlab = xlab, ylab = ylab) }
+  if (length(eig) > 1) {plotuScree(eig, main = main, xlab = xlab, ylab = ylab) }
   lines(1:var, x$eigen$qevpea , col = "green", type = "p", pch = 2)  
   lines(1:var, x$eigen$mevpea,  col = "red")
   if (legend == TRUE) {

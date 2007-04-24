@@ -1,23 +1,22 @@
 \name{nScree}
 \alias{nScree}
-\title{ NON GRAPHICAL CATTELL SCREE TEST}
+\title{ Non Graphical Cattel's Scree Test}
 
 \description{
  The \emph{nScree} function returns an analysis of the number of factors to retain in an exploratory 
  principal components analysis. The function also return informations about the number of factors to retain with the Kaiser-Guttman 
  rule and the parallel analysis. 
-}
+ }
 
 \usage{
-nScree(eig, 
-       aparallel = rep(1, length(eig))
-       )
-}
+ nScree(eig,
+        aparallel = rep(1, length(eig)))
+ }
 
 \arguments{
-  \item{eig}{       Eigenvalues to analyse }
-  \item{aparallel}{ Results of a parallel analysis (default eigenvalues fixed at 1.00 - the Kaiser-Guttman rule) }
-}
+  \item{eig}{       numeric: Eigenvalues to analyse }
+  \item{aparallel}{ numeric: Results of a parallel analysis (default eigenvalues fixed at 1.00 - the Kaiser-Guttman rule) }
+ }
 
 \details{
  The \emph{nScree} function returns an analysis of the number of factors to retain in an exploratory 
@@ -47,7 +46,7 @@ nScree(eig,
  The optimal coordinates (\eqn{OC}) corresponds to an extrapolation of the preceding eigenvalue by a regression 
  line between the eignvalue coordinates and the last eigenvalue coordinate:
    \deqn{n_{OC} = \sum_i \left[(\lambda_i \ge LS_i) \cap (\lambda_i \ge (\lambda_{i \ predicted}) \right].}    
-}
+ }
 
 \value{
   \item{Components }{              Data frame for the number of components according to different rules }
@@ -65,29 +64,29 @@ nScree(eig,
   \item{Analysis$Acc.factor }{     Acceleration factor }
   \item{Analysis$AF}{              Critical acceleration factor }    
   Otherwise, returns a summary of the analysis.
-}
+ }
 
 \seealso{
  \code{\link{plotuScree}}, 
  \code{\link{plotnScree}},
  \code{\link{parallel}},
  \code{\link{plotParallel}},  
-}
+ }
 
 \references{ 
-Cattell, R. B. (1966). The scree test for the number of factors. \emph{Multivariate Behavioral Research, 1}, 245-276. 
+ Cattell, R. B. (1966). The scree test for the number of factors. \emph{Multivariate Behavioral Research, 1}, 245-276.
 
-Guttman, L. (1954). Some necessary conditions for common factor analysis. \emph{Psychometrika, 19, 149-162}.
+ Guttman, L. (1954). Some necessary conditions for common factor analysis. \emph{Psychometrika, 19, 149-162}.
 
-Horn, J. L. (965). A rationale for the number of factors in factor analysis. \emph{Psychometrika, 30}, 179-185.
+ Horn, J. L. (965). A rationale for the number of factors in factor analysis. \emph{Psychometrika, 30}, 179-185.
 
-Kaiser, H. F. (1960). The application of electronic computer to factor analysis. \emph{Educational and Psychological 
-Measurement, 20}, 141-151.
+ Kaiser, H. F. (1960). The application of electronic computer to factor analysis. \emph{Educational and Psychological
+ Measurement, 20}, 141-151.
 
-Raiche, G., Riopel, M. and Blais, J.-G. (2006). \emph{Non graphical solutions for the Cattell's scree test}. 
-Paper presented at the International Annual meeting of the Psychometric Society, Montreal. 
-[\url{http://www.er.uqam.ca/nobel/r17165/RECHERCHE/COMMUNICATIONS/}]
-}
+ Raiche, G., Riopel, M. and Blais, J.-G. (2006). \emph{Non graphical solutions for the Cattell's scree test}.
+ Paper presented at the International Annual meeting of the Psychometric Society, Montreal.
+ [\url{http://www.er.uqam.ca/nobel/r17165/RECHERCHE/COMMUNICATIONS/}]
+ }
 
 \author{ 
     Gilles Raiche, Universite du Quebec a Montreal
@@ -148,7 +147,7 @@ Paper presented at the International Annual meeting of the Psychometric Society,
 # 14        0.06 0.004000000 0.9973333    0.2622424        NA              0.03       
 # 15        0.04 0.002666667 1.0000000    0.1722911        NA                NA       
 
-}
+ }
 
 \keyword{ multivariate }
 
