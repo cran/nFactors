@@ -57,7 +57,7 @@ function(eig,
                                  Pred.eig               = pred.eig,
                                  OC                     = coc,
                                  Acc.factor             = af,
-                                 AF                     = caf),)
+                                 AF                     = caf))
                                  )                              
 
   class(result) <- 'nScree' 
