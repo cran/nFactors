@@ -4,9 +4,24 @@
         *                                                    *
         ******************************************************
 
+------------------------------------------
+- Changes in nFactors 2.3.1 (2009-14-10) -
+------------------------------------------
+
+  o  Two bugs were fixed inside the function structureSim. The first one, at
+     line 21, is related to permutation analysis where the quantile paramater
+     of the function call stayed fixed at 0.95 even if the value is different
+     in the call. The variable quantile is now formally use in the call to
+     eigenBootParallel. The second bug was realted to an error in the column
+     names of the data.frame return from structureSim: the per and mean.eig
+     columns were unfortunalely inrerchanged. Version 2.3.1 fixed it.
+
+  o  Bug fixing was the occasion to introduce a new function used for a
+  paper proposed to Behaviormetrika, studySim. But this function is useful for
+  many other simulation settings.
 
 ----------------------------------------
-- Changes in nFactors 2.3 (2009-09-15) -
+- Changes in nFactors 2.3 (2009-15-09) -
 ----------------------------------------
 
   This version of nFactors is a major upgrade and so presents important

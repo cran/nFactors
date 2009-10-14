@@ -50,7 +50,7 @@ The following code is for the initialisation phase. First, the libraries
  var       <- 36
  pmjc      <- 12
  reppar    <- 100
- index     <- 1:10
+ index     <- 1:11
  zwick     <- generateStructure(var=var, mjc=nFactors, pmjc=pmjc,
                                 loadings=loadings,
                                 unique=unique)

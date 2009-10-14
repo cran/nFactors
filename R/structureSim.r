@@ -18,7 +18,7 @@ function(fload, reppar=30, repsim=100, N, quantile=0.95, model="components",
   components[i,(1:4)]    <- t(results$Components)
   ### PERMUTATIONS
   if (eigenFrom(data.frame(simulation$observed)) == "data")  {
-   permutation <- eigenBootParallel(x=data.frame(simulation$observed), quantile=0.95, model=model)$quantile
+   permutation <- eigenBootParallel(x=data.frame(simulation$observed), quantile=quantile, model=model)$quantile
    }
   results                <- nScree(x=eigenvalues,aparallel = permutation, cor=TRUE, model=model)
   components[i, 5]       <- results$Components$nparallel
@@ -39,7 +39,7 @@ function(fload, reppar=30, repsim=100, N, quantile=0.95, model="components",
   }
 
  names                <- colnames(results$Components)
- names                <- c("oc", "af", "par", "per", "mean.eig")
+ names                <- c("oc", "af", "par", "mean.eig", "per")
  components           <- data.frame(components)
  colnames(components) <- c(names,"cng","b","t.b","p.b","sescree","R2","Bartlett","Anderson","Lawley","Bentler")
  if (details == TRUE) analysis <- list(components=components, eigenvalues=values)
@@ -49,3 +49,5 @@ function(fload, reppar=30, repsim=100, N, quantile=0.95, model="components",
  class(res) <- 'structureSim'
  return(res)
  }
+## LIGNE 21 MODIFIEE: ETAIT quantile=0.95
+## LIGNE 42 MODIFIEE: EAIT c("oc", "af", "par", "per", "mean.eig")

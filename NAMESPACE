@@ -28,7 +28,8 @@ export("bentlerParameters",
        "principalAxis",
        "principalComponents",
        "rRecovery",
-       "structureSim")
+       "structureSim",
+       "studySim")
 
 S3method("print",   "nFactors")
 S3method("summary", "nFactors")

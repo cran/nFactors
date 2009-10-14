@@ -2,12 +2,13 @@ Package: nFactors
 Type: Package
 Title: Parallel Analysis and Non Graphical Solutions to the Cattell
         Scree Test
-Version: 2.3
-Date: 2009-12-09
+Version: 2.3.1
+Date: 2009-14-10
 Encoding: latin1
-Author: Gilles Raiche (UQAM) and David Magis (KU Leuven)
+Author: Gilles Raiche (Universite du Quebec a Montreal) and David Magis
+        (Universite de Liege)
 Maintainer: Gilles Raiche <raiche.gilles@uqam.ca>
-Depends: R (>= 2.0.0), MASS, psych, boot, lattice
+Depends: R (>= 2.9.2), MASS, psych, boot, lattice
 Suggests: xtable
 Description: Indices, heuristics and strategies to help to determine
         the number of factors/components to retain: 1. Acceleration
@@ -21,6 +22,6 @@ Description: Indices, heuristics and strategies to help to determine
         khi-2; 10. Anderson khi-2; 11. Lawley khi-2 and 12.
         Bentler-Yuan khi-2.
 License: GPL (>= 2)
-Packaged: 2009-09-19 11:24:02 UTC; HP_Propriétaire
+Packaged: 2009-10-14 02:27:36 UTC; HP_Propriétaire
 Repository: CRAN
-Date/Publication: 2009-09-20 19:35:23
+Date/Publication: 2009-10-14 09:34:09

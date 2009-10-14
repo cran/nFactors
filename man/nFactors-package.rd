@@ -28,7 +28,7 @@
  \tabular{ll}{
   Package: \tab nFactors \cr
   Type:    \tab Package \cr
-  Version: \tab 2.3.0 \cr
+  Version: \tab 2.3.1 \cr
   Date:    \tab 2009-09-01 \cr
   Depends: \tab R (>= 2.0.0), MASS, psych, boot \cr
   License: \tab GPL \cr

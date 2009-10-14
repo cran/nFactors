@@ -14,6 +14,9 @@
   \item{\emph{adequacy}:}{          logical: if \code{TRUE} print the recovered
                                     population matrix from the factor structure
                                     (\code{structureSim})}
+  \item{\emph{all}:}{               logical:   if \code{TRUE} computes athe Bentler and Yuan
+                                    index (very long computating time to consider)
+                                    (\code{structureSim, studySim})}
   \item{\emph{alpha}:}{             numeric: statistical significance level
                                     (\code{nBartlett, nBentler})}
   \item{\emph{aparallel}:}{         numeric: results of a parallel analysis
@@ -51,6 +54,8 @@
                                     used in the computation of
                                     this correlation or covariance matrix
                                     (\code{rRecovery})}
+  \item{\emph{dir}:}{               character:  Directory where to save output
+                                    (\code{studySim})}
   \item{\emph{eig}:}{               depreciated parameter (use x instead): Eigenvalues to analyse
                                     (\code{nScree,  plotParallel})}
   \item{\emph{Eigenvalue}:}{        depreciated parameter (use x instead): eigenvalues to analyse
@@ -62,7 +67,7 @@
   \item{\emph{iterations}:}{        numeric: maximum number of iterations to obtain a solution
                                     (\code{iterativePrincipalAxis})}
   \item{\emph{legend}:}{            Logical indicator of the presence or not of a legend (\code{plotnScree, plotParallel}) }
-  \item{\emph{loadings}:}{          numeric: loadings from a factor analysis solution (\code{rRecovery, generateStructure})}
+  \item{\emph{loadings}:}{          numeric: loadings from a factor analysis solution (\code{rRecovery, generateStructure, studySim})}
   \item{\emph{log}:}{               logical: if \code{TRUE} does the minimization on the log values  (\code{bentlerParameters, nBentler})}
   \item{\emph{main}:}{              character: main title (\code{plotnScree, plotParallel, plotuScree, boxplot.structureSim,
                                     plot.structureSim}) }
@@ -78,11 +83,11 @@
   \item{\emph{pmjc}:}{              numeric: number of variables that load significantly on each major factor
                                     (\code{generateStructure})}
   \item{\emph{model}:}{             character: \code{"components"} or \code{"factors"}  (\code{nScree, parallel, plotParallel,
-                                    plotuScree, structureSim, eigenBootParallel, eigenBootParallel})}
-  \item{\emph{N}:}{                 numeric:  number of subjects (\code{nBartlett, bentlerParameters, nBentler})}
+                                    plotuScree, structureSim, eigenBootParallel, eigenBootParallel, studySim})}
+  \item{\emph{N}:}{                 numeric:  number of subjects (\code{nBartlett, bentlerParameters, nBentler, studySim})}
   \item{\emph{nboot}:}{             numeric: number of bootstrap samples (\code{eigenBootParallel}) }
   \item{\emph{nFactors}:}{          numeric: number of components/factors to retained (\code{componentAxis,
-                                    iterativePrincipalAxis, principalAxis, bentlerParameters, boxplot.structureSim})}
+                                    iterativePrincipalAxis, principalAxis, bentlerParameters, boxplot.structureSim, studySim})}
   \item{\emph{nScree}:}{            results of a previous nScree analysis (\code{plotnScree})}
   \item{\emph{option}:}{            character: \code{"permutation"} or \code{"bootstrap"} (\code{eigenBootParallel})}
   \item{\emph{object}:}{            nScree: an object of the class nScree \code{is.nScree, summary.nScree} }
@@ -90,15 +95,15 @@
                                     summary.structureSim})}
 
   \item{\emph{parallel}:}{          numeric: vector of the result of a previous parallel analysis (\code{plotParallel})}
-  \item{\emph{pmjc}:}{              numeric: number of major loadings on each factor factors (\code{generateStructure}) }
+  \item{\emph{pmjc}:}{              numeric: number of major loadings on each factor factors (\code{generateStructure, studySim}) }
   \item{\emph{quantile}:}{          numeric: quantile that will be reported (\code{parallel, moreStats,
-                                    eigenBootParallel, structureSim}) }
+                                    eigenBootParallel, structureSim, studySim}) }
   \item{\emph{R}:}{                 numeric: correlation or covariance matrix (\code{componentAxis, iterativePrincipalAxis,
                                     principalAxis, principalComponents, rRecovery, corFA})}
-  \item{\emph{r2limen}:}{           numeric: R2 limen value for the R2 index of Nelson (\code{structureSim, nSeScree})}
+  \item{\emph{r2limen}:}{           numeric: R2 limen value for the R2 index of Nelson (\code{structureSim, nSeScree, studySim})}
   \item{\emph{rep}:}{               numeric: number of replications of the correlation or the covariance matrix (default is 100) (\code{parallel})}
-  \item{\emph{reppar}:}{            numeric: number of replication for the parallel analysis (\code{structureSim})}
-  \item{\emph{repsim}:}{            numeric: number of replication of the matrix correlation simulation (\code{structureSim})}
+  \item{\emph{reppar}:}{            numeric: number of replication for the parallel analysis (\code{structureSim, studySim})}
+  \item{\emph{repsim}:}{            numeric: number of replication of the matrix correlation simulation (\code{structureSim, studySim})}
   \item{\emph{resParx}:}{           numeric: restriction on the \eqn{\alpha} coefficient (x) to graph the function to minimize
                                     (\code{bentlerParameters})}
   \item{\emph{resolution}:}{        numeric: resolution of the 3D graph (number of points from \eqn{\alpha} and from \eqn{\beta}).}
@@ -107,19 +112,24 @@
   \item{\emph{sd}:}{                numeric: vector of standard deviations of the simulated variables
                                     (for a parallel analysis on a covariance matrix) \code{parallel})}
   \item{\emph{show}:}{              logical: if \code{TRUE} print the quantile choosen (\code{moreStats}) }
+  \item{\emph{stats}:}{             numeric:   vector of the statistics to return: mean(1),
+                                    median(2), sd(3), quantile(4), min(5), max(6)
+                                    (\code{studySim})}
   \item{\emph{subject}:}{           numeric: number of subjects (default is 100) (\code{parallel})}
   \item{\emph{tolerance}:}{         numeric: minimal difference in the estimated communalities after a given iteration
                                     (\code{iterativePrincipalAxis})}
+  \item{\emph{trace}:}{             logical:   if \code{TRUE} output details of the status of the simulations
+                                    (\code{studySim})}
   \item{\emph{typePlot}:}{          character: plot the minimized function according to a 3D plot: \code{"wireframe"},
                                     \code{"contourplot"} or \code{"levelplot"}  (\code{bentlerParameters})}
   \item{\emph{unique}:}{            numeric: loadings on the non significant variables on each major factor
-                                    (\code{generateStructure}) }
+                                    (\code{generateStructure, studySim}) }
   \item{\emph{upper}:}{             logical: if \code{TRUE} the upper diagonal is replaced with the lower
                                     diagonal. If \code{FALSE}, lower diagonal is replaced with upper diagonal
                                     (\code{diagReplace})}
   \item{\emph{use}:}{               character: how to deal with missing values, same as the
                                     parameter from the \code{corr} function (\code{eigenBootParallel}) }
-  \item{\emph{var}:}{               numeric: number of variables (default is 10) (\code{parallel, generateStructure}) }
+  \item{\emph{var}:}{               numeric: number of variables (default is 10) (\code{parallel, generateStructure, studySim}) }
   \item{\emph{vLine}:}{             character: color of the vertical indicator line in the eigen boxplot
                                     (\code{boxplot.structureSim})}
   \item{\emph{x}:}{                 numeric: a \code{vector} of eigenvalues, a \code{matrix} of
