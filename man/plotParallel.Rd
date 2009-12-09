@@ -7,22 +7,31 @@
  }
 
 \usage{
- plotParallel(x, 
-              eig     = NA, 
+ plotParallel(parallel,
+              eig    = NA,
+              x      = eig,
+              model  = "components",
               legend = TRUE,
-              ylab   = "Eigenvalue",
-              xlab   = "Component",
-              main   = "Parallel Analysis"
+              ylab   = "Eigenvalues",
+              xlab   = "Components",
+              main   = "Parallel Analysis",
+              ...
               )
  }
 
 \arguments{
-  \item{x}{       Result of a previous parallel analysis }
-  \item{eig}{     Eigenvalues }
-  \item{main}{    Title of the plot }
-  \item{xlab}{    Label of the x axis }
-  \item{ylab}{    Label of the y axis }
-  \item{legend}{  Logical indicator of the presence or not of a legend }
+  \item{parallel}{ numeric:   vector of the result of a previous parallel analysis }
+  \item{eig}{      depreciated parameter: Eigenvalues to analyse (not used if
+                   x is used, recommended)}
+  \item{x}{        numeric: a \code{vector} of eigenvalues, a \code{matrix} of
+                   correlations or of covariances or a \code{data.frame} of data}
+  \item{model}{    character: \code{"components"} or \code{"factors"} }
+  \item{main}{     character: title of the plot }
+  \item{xlab}{     character: label of the x axis }
+  \item{ylab}{     character: label of the y axis }
+  \item{legend}{   logical:   indicator of the presence or not of a legend }
+  \item{...}{      variable: additionnal parameters to give to the \code{cor} or
+                   \code{cov} functions}
  }
  
 \details{
@@ -40,7 +49,9 @@
  }
 
 \author{ 
-    Gilles Raiche, Universite du Quebec a Montreal
+    Gilles Raiche \cr
+    Centre sur les Applications des Modeles de Reponses aux Items (CAMRI) \cr
+    Universite du Quebec a Montreal\cr
     \email{raiche.gilles@uqam.ca}, \url{http://www.er.uqam.ca/nobel/r17165/}
  }
 
@@ -67,6 +78,7 @@
 
 
 ## PARALLEL ANALYSIS SCREE PLOT
+ plotParallel(results, x=eig)
  plotParallel(results)
 
  }

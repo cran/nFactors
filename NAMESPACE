@@ -1,18 +1,46 @@
-export("plotuScree", 
-       "nScree",
-       "plotnScree", 
-       "parallel",
-       "plotParallel",
+
+importFrom(graphics, boxplot)
+
+export("bentlerParameters",
        "componentAxis",
+       "corFA",
        "diagReplace",
+       "eigenBootParallel",
+       "eigenComputes",
+       "eigenFrom",
+       "generateStructure",
+       "is.nFactors",
+       "is.nScree",
+       "is.structureSim",
        "iterativePrincipalAxis",
+       "makeCor",
+       "moreStats",
+       "nBartlett",
+       "nBentler",
+       "nCng",
+       "nMreg",
+       "nScree",
+       "nSeScree",
+       "parallel",
+       "plotnScree",
+       "plotParallel",
+       "plotuScree",
        "principalAxis",
        "principalComponents",
-       "rRecovery" 
-       )
+       "rRecovery",
+       "structureSim")
 
+S3method("print",   "nFactors")
+S3method("summary", "nFactors")
 
+S3method("plot",    "nScree")
+S3method("print",   "nScree")
+S3method("summary", "nScree")
 
+S3method("boxplot", "structureSim")
+S3method("plot",    "structureSim")
+S3method("print",   "structureSim")
+S3method("summary", "structureSim")
 
 
 

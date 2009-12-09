@@ -1,18 +1,21 @@
 "plotParallel" <-
-function(x, 
-                           eig    = NA, 
-                           legend = TRUE,
-                           ylab   = "Eigenvalue",
-                           xlab   = "Component",
-                           main   = "Parallel Analysis"
+function(parallel,
+         eig    = NA,
+         x      = eig,
+         model  = "components",
+         legend = TRUE,
+         ylab   = "Eigenvalues",
+         xlab   = "Components",
+         main   = "Parallel Analysis",
+         ...
                            ) {                       
-                          
-  if (!inherits(x, "parallel")) stop("Method is only for parallel objects") 
-                            
-  var        <- length(x$eigen$qevpea) 
+  if (any(!is.na(x))) eig <- eigenComputes(x, ...)
+  if (!inherits(parallel, "parallel")) stop("Method is only for parallel objects")
+  if (model == "factors") xlab <- "Factors"
+  var        <- length(parallel$eigen$qevpea)
   if (length(eig) == 1) {  
    Component <- var:1
-   Location  <- seq(from = 0, to = max(x$eigen$qevpea)*3, length.out = var)
+   Location  <- seq(from = 0, to = max(parallel$eigen$qevpea)*3, length.out = var)
    plot.default(as.numeric(Component),
                 as.numeric(Location), 
                 type = "n", 
@@ -22,8 +25,8 @@ function(x,
     }
     
   if (length(eig) > 1) {plotuScree(eig, main = main, xlab = xlab, ylab = ylab) }
-  lines(1:var, x$eigen$qevpea , col = "green", type = "p", pch = 2)  
-  lines(1:var, x$eigen$mevpea,  col = "red")
+  lines(1:var, parallel$eigen$qevpea , col = "green", type = "p", pch = 2)
+  lines(1:var, parallel$eigen$mevpea,  col = "red")
   if (legend == TRUE) {
    if (length(eig) == 1) { 
      leg <-  c("Mean Eigenvalues", "Centiles of the Eigenvalues")

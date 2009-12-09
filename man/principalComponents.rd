@@ -3,10 +3,10 @@
 \title{ Principal Component Analysis }
 
 \description{
- The \emph{principalComponents} function return a principal component analysis.
- Other R functions give the same results, but \emph{principalComponents} is mainly
- customed for the other factor analysis functions available in the \emph{nfactors}
- package.  To retain only a small number of components the \emph{componentAxis}
+ The \code{principalComponents} function return a principal component analysis.
+ Other R functions give the same results, but \code{principalComponents} is mainly
+ customed for the other factor analysis functions available in the \pkg{nfactors}
+ package.  To retain only a small number of components the \code{componentAxis}
  function has to be used.
  }
 
@@ -25,6 +25,17 @@
   \item{loadings}{     numeric: loadings of each variable on each component }
  }
 
+\references{
+ Joliffe, I. T. (2002). \emph{Principal components analysis} (2th Edition).
+  New York, NJ: Springer-Verlag.
+ 
+ Kim, J.-O., Mueller, C. W. (1978). \emph{Introduction to factor analysis. What it
+  is and how to do it}. Beverly Hills, CA: Sage.
+
+ Kim, J.-O., Mueller, C. W. (1987). \emph{Factor analysis. Statistical methods and
+  practical issues}. Beverly Hills, CA: Sage.
+ }
+
 \seealso{
  \code{\link{componentAxis}},
  \code{\link{iterativePrincipalAxis}},
@@ -32,7 +43,9 @@
  }
 
 \author{ 
-    Gilles Raiche, Universite du Quebec a Montreal
+    Gilles Raiche \cr
+    Centre sur les Applications des Modeles de Reponses aux Items (CAMRI) \cr
+    Universite du Quebec a Montreal\cr
     \email{raiche.gilles@uqam.ca}, \url{http://www.er.uqam.ca/nobel/r17165/}
  }
 

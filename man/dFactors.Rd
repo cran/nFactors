@@ -1,7 +1,7 @@
 \name{dFactors}
 \alias{dFactors}
 \docType{data}
-\title{ Eigenvalues Vectors from the Litterature }
+\title{ Eigenvalues Vectors From the Litterature }
 
 \description{
   Classical examples of eigenvalues vectors used to study the number of factors 
@@ -22,7 +22,7 @@
  }
 
 \source{
- Lawley and Hand data set: Bartholomew \emph{et al}. (2002, p. 123, 126)  
+ Lawley and Hand dataset:  Bartholomew \emph{et al}. (2002, p. 123, 126)
 
  Bentler dataset:          Bentler and Yuan (1998, p. 139-140)
 
@@ -39,49 +39,53 @@
 
 \references{
  Bartholomew, D. J., Steele, F., Moustaki, I. and Galbraith, J. I. (2002).
- \emph{The analysis and interpretation of multivariate
- data for social scientists}. Boca Raton, FL: Chapman and Hall.
+  \emph{The analysis and interpretation of multivariate
+  data for social scientists}. Boca Raton, FL: Chapman and Hall.
 
  Bentler, P. M. and Yuan, K.-H. (1998). Tests for linear trend in the smallest
- eigenvalues of the correlation matrix. \emph{Psychometrika, 63}(2), 131-144.
+  eigenvalues of the correlation matrix. \emph{Psychometrika, 63}(2), 131-144.
 
  Buja, A. and Eyuboglu, N. (1992). Remarks on parallel analysis.
- \emph{Multivariate Behavioral Research, 27}(4), 509-540.
+  \emph{Multivariate Behavioral Research, 27}(4), 509-540.
 
  Cliff, N. (1970). The relation between sample and population characteristic vectors.
- \emph{Psychometrika, 35}(2), 163-178.
+  \emph{Psychometrika, 35}(2), 163-178.
 
  Hand, D. J., Daly, F., Lunn, A. D., McConway, K. J. and Ostrowski, E. (1994).
- \emph{A handbook of small data sets}. Boca Raton, FL: Chapman and Hall.
+  \emph{A handbook of small data sets}. Boca Raton, FL: Chapman and Hall.
 
  Jaejon Song, B. A., Walls, T. A. and Raiche, G. (2008). \emph{Numerical solutions
- for Cattel's scree test: application to the adolescent smoking consequences
- questionnaire (ASCQ)}. Paper presented at the International Annual meeting of the
- Psychometric Society, Duram, New Hamphire.
- [\url{http://www.er.uqam.ca/nobel/r17165/RECHERCHE/COMMUNICATIONS/}]
+  for Cattel's scree test: application to the adolescent smoking consequences
+  questionnaire (ASCQ)}. Paper presented at the International Annual meeting of the
+  Psychometric Society, Duram, New Hamphire.
+  [\url{http://www.er.uqam.ca/nobel/r17165/RECHERCHE/COMMUNICATIONS/}]
 
  Lawley, D. N. and Maxwell, A. E. (1971). \emph{Factor analysis as a statistical
- method} (2nd edition). London: Butterworth.
+  method} (2nd edition). London: Butterworth.
 
- Raiche, G., Langevin, L., Riopel, M. and Mauffette, Y. (2006).
- \emph{Mesure et Evaluation en Education, 29}(2), 41-61.
+ Raiche, G., Langevin, L., Riopel, M. and Mauffette, Y. (2006). Etude exploratoire
+  de la dimensionnalite et des facteurs expliques par une traduction francaise de
+  l'Inventaire des approches d'enseignement de Trigwell et Prosser dans trois
+  universite québecoise \emph{Mesure et Evaluation en Education, 29}(2), 41-61.
 
  Raiche, G., Riopel, M. and Blais, J.-G. (2006). \emph{Non graphical solutions
- for the Cattell's scree test}. Paper presented at the International Annual
- meeting of the Psychometric Society, Montreal.
-[\url{http://www.er.uqam.ca/nobel/r17165/RECHERCHE/COMMUNICATIONS/}]
+  for the Cattell's scree test}. Paper presented at the International Annual
+  meeting of the Psychometric Society, Montreal.
+  [\url{http://www.er.uqam.ca/nobel/r17165/RECHERCHE/COMMUNICATIONS/}]
 
  Tucker, L. D., Koopman, R. F. and Linn, R. L. (1969). Evaluation of factor
- analytic reserach procedures by mean of simulated correlation matrices.
- \emph{Psychometrika, 34}(4), 421-459.
+  analytic research procedures by mean of simulated correlation matrices.
+  \emph{Psychometrika, 34}(4), 421-459.
 
  Zoski, K. and Jurs, S. (1993). Using multiple regression to determine the
- number of factors to retain in factor analysis. \emph{Multiple Linear
- Regression Viewpoint, 20}(1), 5-9.
+  number of factors to retain in factor analysis. \emph{Multiple Linear
+  Regression Viewpoint, 20}(1), 5-9.
  }
 
 \author{ 
-    Gilles Raiche, Universite du Quebec a Montreal
+    Gilles Raiche \cr
+    Centre sur les Applications des Modeles de Reponses aux Items (CAMRI) \cr
+    Universite du Quebec a Montreal\cr
     \email{raiche.gilles@uqam.ca}, \url{http://www.er.uqam.ca/nobel/r17165/}
  }
 

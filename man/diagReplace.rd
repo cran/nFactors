@@ -3,7 +3,7 @@
 \title{ Replacing Upper or Lower Diagonal of a Correlation or Covariance Matrix}
 
 \description{
- The \emph{diagReplace} function return a modified correlation or covariance
+ The \code{diagReplace} function returns a modified correlation or covariance
  matrix by replacing upper diagonal with lower diagonal, or lower diagonal with upper
  diagonal.
  }
@@ -14,24 +14,26 @@
 
 \arguments{
   \item{R}{     numeric: correlation or covariance matrix}
-  \item{upper}{ logical: if \emph{TRUE} the upper diagonal is replaced with the lower
-                diagonal. If \emph{FALSE}, lower diagonal is replaced with upper diagonal.}
+  \item{upper}{ logical: if \code{TRUE} the upper diagonal is replaced with the lower
+                diagonal. If \code{FALSE}, lower diagonal is replaced with upper diagonal.}
  }
 
 \value{
-  \item{R }{ numeric: return a correlation or covariance matrix }
+  \item{R }{ numeric: correlation or covariance matrix }
  }
 
 
 
 \author{ 
-    Gilles Raiche, Universite du Quebec a Montreal
+    Gilles Raiche \cr
+    Centre sur les Applications des Modeles de Reponses aux Items (CAMRI) \cr
+    Universite du Quebec a Montreal\cr
     \email{raiche.gilles@uqam.ca}, \url{http://www.er.uqam.ca/nobel/r17165/}
  }
 
 \examples{
 # .......................................................
-# Exemple from Kim and Mueller (1978, p. 10)
+# Example from Kim and Mueller (1978, p. 10)
 # Population: upper diagonal
 # Simulated sample: lower diagnonal
  R <- matrix(c( 1.000, .6008, .4984, .1920, .1959, .3466,

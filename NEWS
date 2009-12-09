@@ -1,0 +1,83 @@
+        ******************************************************
+        *                                                    *
+        *  Changes and Developments in the nFactors Package  *
+        *                                                    *
+        ******************************************************
+
+
+----------------------------------------
+- Changes in nFactors 2.3 (2009-09-15) -
+----------------------------------------
+
+  This version of nFactors is a major upgrade and so presents important
+  additions and modifications. Care was taken to not modified parameters from
+  version 2.2 calls so that functions and packages already requiring nFactors
+  will yet operate correctly in the future. But like with all mojor upgrades,
+  care must be taken and it is recommanded that developpers verify their
+  results. All the future upgrades won't have this potentiel problems.
+
+  o  Many new procedures to determine the number of components or factors to
+     retain are added: permutation and bootstrap parallel analysis, CNG,
+     Bentler and Yuan, Bartlett, Anderson, Lawley, Zosky and Jurs, etc.
+     
+  o  Care is taken to uniformise the labelling of new functions and new
+     variables. According to the Java coding practice, with this labelling, the
+     names begin with a small character, and capitals are used inside for added
+     concepts.
+     
+  o  It is now possible to do most of the nfactors package analysis on a
+     covariance matrix.
+     
+  o  It is now possible to do most of the nfactors package analysis in the CFA
+     context.
+     
+  o  The permutation parallel analysis of Buja and Eyuboglu (1992) is added.
+  
+  o  It is now possible to bootstrap the eigenvalues from an empirical data
+     matrix.
+     
+  o  New heuristic numerical indices are added to determine the number of
+     components/factores to retain: CNG, Zoski and Jurs multiple regression,
+     Joski and Jurs standard error of the scree, and Nelson R.
+     
+  o  Likelihood ratio tests are added: Bartlet, Anderson, Lawley, and Bentler
+     and Yuan chi-squared.
+     
+  o  The eigenComputes function computes eigenvalues conditional of the class
+     of the object from which data come from: eigenvalues from vector,
+     correlation/covariance matrix, or data from a data.frame.
+     
+  o  The eigenFrom function determine the class of the object.
+  
+  o  The corFA function is added to insert commulalities in the diagonal of a
+     correlation or a covariance matrix.
+     
+  o  The makeCor function creates a full correlation/covariance matrix from a
+     matrix with lower part filled and upper part with zeros.
+     
+  o  Functions are added to generate a factor structure (generateStructure)
+     and to simulate data and correlation matrices from a predefined factor
+     structure (structureSim).
+     
+  o  A function, moreStats, is added to be computes additionnal statistics on a
+     numeric data.frame.
+     
+  o  Utility functions for \code{nScree} class objects werw implemented:
+     is.nScree, plot.nScree, plot.nScree and summary.nScree.
+
+
+----------------------------------------
+- Changes in nFactors 2.2 (2009-02-06) -
+----------------------------------------
+
+  o  Considering the instabillity of the function factanal with ill
+     conditionned correlation matrices, new functions for computing factor
+     analysis are added: componentAxis, iteratePrincipalAxix, principalAxis and
+     principalComponents.
+     
+  o  The diagReplace function replace the upper or the lower diagonal of a
+     correlation matrix with the respective lower or lower diagonal.
+     
+  o  The rRecovery function is added for a verification of the quality of the
+     recovery of an initial correlation matrix.
+

@@ -11,18 +11,18 @@
 \usage{
  plotnScree(nScree, 
             legend = TRUE,
-            ylab   = "Eigenvalue",
-            xlab   = "Component",
+            ylab   = "Eigenvalues",
+            xlab   = "Components",
             main   = "Non Graphical Solutions to Scree Test"
             )                    
  }
 
 \arguments{
-  \item{nScree}{  Results of a previous nScree analysis }
+  \item{nScree}{  Results of a previous \code{nScree} analysis }
   \item{legend}{  Logical indicator of the presence or not of a legend  }
-  \item{xlab}{    Label of the x axis (default to "Component") }
-  \item{ylab}{    Label of the y axis (default to "Eigenvalue") }
-  \item{main}{    Main title (default to "Non Graphical Solutions to the Scree Test") }
+  \item{xlab}{    Label of the x axis (default to \code{"Component"}) }
+  \item{ylab}{    Label of the y axis (default to \code{"Eigenvalue"}) }
+  \item{main}{    Main title (default to \code{"Non Graphical Solutions to the Scree Test"}) }
  }
 
 \value{
@@ -31,12 +31,14 @@
 
 \references{ 
  Raiche, G., Riopel, M. and Blais, J.-G. (2006). \emph{Non graphical solutions for the Cattell's scree test}.
- Paper presented at the International Annual meeting of the Psychometric Society, Montreal.
- [\url{http://www.er.uqam.ca/nobel/r17165/RECHERCHE/COMMUNICATIONS/}]
+  Paper presented at the International Annual meeting of the Psychometric Society, Montreal.
+  [\url{http://www.er.uqam.ca/nobel/r17165/RECHERCHE/COMMUNICATIONS/}]
  }
 
 \author{ 
-    Gilles Raiche, Universite du Quebec a Montreal
+    Gilles Raiche \cr
+    Centre sur les Applications des Modeles de Reponses aux Items (CAMRI) \cr
+    Universite du Quebec a Montreal\cr
     \email{raiche.gilles@uqam.ca}, \url{http://www.er.uqam.ca/nobel/r17165/}
  }
 
