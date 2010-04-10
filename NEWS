@@ -5,6 +5,15 @@
         ******************************************************
 
 ------------------------------------------
+- Changes in nFactors 2.3.3 (2011-12-16) -
+------------------------------------------
+ Changes done because the functions mean() and sd() in the moreStats() function 
+ were depreciated with data.frames.
+
+ xMean <- sapply(x, mean) # mean(x) before change
+ xSd   <- sapply(x, sd)   # sd(x) before change
+
+------------------------------------------
 - Changes in nFactors 2.3.2 (2010-10-04) -
 ------------------------------------------
 

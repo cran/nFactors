@@ -2,8 +2,8 @@ moreStats <-
 function(x, quantile=0.95, show=FALSE) {
  cent  <- quantile    # The old parameter was labeled cent
  x     <- data.frame(x)
- xMean <- mean(x)
- xSd   <- sd(x)
+ xMean <- sapply(x, mean) # mean(x)
+ xSd   <- sapply(x, sd)   # sd(x)
  xMin  <- xMax <- xMedian <- xQuantile <- numeric(ncol(x))
  for (i in 1:ncol(x)) {
   xMin[i]    <- min(x[,i])

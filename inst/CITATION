@@ -6,7 +6,7 @@ citEntry(entry        = "Manual",
          year         = "2010",
          note         = paste("R package version ",packageDescription("nFactors")$Version,".",sep=""), 
 
-         url          = {http://CRAN.R-project.org/package=nFactors}        
+         url          = "http://CRAN.R-project.org/package=nFactors",        
          textVersion  = paste("Raiche, G. (2010). ", 
                "nFactors: an R package for parallel analysis and non graphical solutions to the Cattell scree test.", "R package version ",packageDescription("nFactors")$Version,".",sep="")
 )
