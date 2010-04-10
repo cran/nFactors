@@ -19,20 +19,20 @@
   \item{cor}{     logical: if \code{TRUE} computes eigenvalues from a correlation
                   matrix, else from a covariance matrix}
   \item{model}{   character: \code{"components"} or \code{"factors"} }
-  \item{details}{ logical: if \code{TRUE} also return detains about the computation
-                  for each eigenvalues.}
+  \item{details}{ logical: if \code{TRUE} also returns detains about the computation
+                  for each eigenvalue.}
   \item{...}{     variable: additionnal parameters to give to the \code{eigenComputes}
                   function}
  }
  
 \details{
   Note that the \code{nCng} function is only valid when more than six eigenvalues
-  are used and that these are obtained in the context of a principal components
+  are used and that these are obtained in the context of a principal component
   analysis. For a factor analysis, some eigenvalues could be negative and
   the function will stop and give an error message.
   
   The slope of all possible sets of three adjacent eigenvalues
-  are compared, so \emph{CNG} indices can be applied when more than six eigenvalues
+  are compared, so \emph{CNG} indices can be applied only when more than six eigenvalues
   are used. The eigenvalue at which the greatest difference between two successive
   slopes occurs is the indicator of the number of components/factors to retain.
  }
@@ -40,7 +40,7 @@
 
 \value{
   \item{nFactors}{ numeric: number of factors retained by the CNG procedure. }
-  \item{details}{  numeric: matrix of the details for each indice.}
+  \item{details}{  numeric: matrix of the details for each index.}
  }
  
 \references{

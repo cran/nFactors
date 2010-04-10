@@ -44,7 +44,7 @@
 
 
 \value{
-  \item{eigen}{         Data frame consisting of mean and the quantile of the eigenvalues distribution }
+  \item{eigen}{         Data frame consisting of the mean and the quantile of the eigenvalues distribution }
   \item{eigen$mevpea}{  Mean of the eigenvalues distribution}
   \item{eigen$sevpea}{  Standard deviation of the eigenvalues distribution}  
   \item{eigen$qevpea}{  quantile of the eigenvalues distribution}

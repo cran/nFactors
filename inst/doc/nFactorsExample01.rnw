@@ -16,8 +16,8 @@ structure is explored with different indices available in the \texttt{nFactors}
 package. The example is inspired from a simulation study by Zwick and Velicer
 (1986, table 2, p. 437). \\
 
-The following code is for the initialisation phase. First, the libraries
-\texttt{nFactors} and \texttt{xtable} must be loaded.\\
+The following code is for the initialisation phase. The
+\texttt{nFactors} and \texttt{xtable} libraries must first be loaded.\\
 
 <<echo=false,results=hide>>=
  library(xtable)
@@ -44,7 +44,7 @@ The following code is for the initialisation phase. First, the libraries
  library(nFactors)
  nFactors  <- 3
  unique    <- 0.2
- loadings  <- 0.8
+ loadings  <- 0.5
  nsubjects <- 180
  repsim    <- 100
  var       <- 36
@@ -58,19 +58,18 @@ The following code is for the initialisation phase. First, the libraries
 \end{verbatim}
 \end{ttfamily}
 
-After that, from \Sexpr{var} variables and \Sexpr{nsubjects} subjects
-a \Sexpr{nFactors} factor solution with \Sexpr{pmjc} variables showing
-a correlation of \Sexpr{loadings} on their respective factors and
-\Sexpr{unique} on the others is simulated. To assure good
-values of the percentiles, \Sexpr{repsim} replications of the simulation and
+A \Sexpr{nFactors} factor solution with \Sexpr{pmjc}
+variables is then simulated from \Sexpr{var} variables and \Sexpr{nsubjects} subjects,
+showing a correlation of \Sexpr{loadings} on their respective factors and \Sexpr{unique} on the others.
+To assure accurate values of the percentiles, \Sexpr{repsim} replications of the simulation and
 \Sexpr{reppar} replications of the parallel analysis are done. \\
 
-The following code produces statistics about the number of factors to retain from
+The following code produces statistics concerning the number of factors to retain from
 the \Sexpr{reppar} replications of a parallel analysis on \Sexpr{repsim} sampled correlation matrices
 (factor solution). Note that only the indices corresponding to the \texttt{index}
 parameter are considered. Note also that for the sake of this report the \texttt{xtable}
 function is applied. In a usual \texttt{R} session the \texttt{print} function would be used instead.
-The same commentary is also of concern for the next table from a principal component
+The same commentary applies to the next table which comes from a principal component
 analysis.\\
 
 
@@ -109,7 +108,7 @@ analysis.\\
 \newpage
 The following code produces statistics about about the number of factors to retain
 from a replication of a parallel analysis on \Sexpr{repsim} sampled correlation
-matrices (principal components solution). \\
+matrices (principal component solution). \\
 
 \begin{ttfamily}
 \begin{verbatim}
@@ -142,9 +141,9 @@ matrices (principal components solution). \\
 
 \newpage
 An index accuracy plot is produced to compare the number of factors to retain from
-the principal components analysis solution (upper one)
-(figure \ref{fig:indexAccuracyPlot}). Another plot is also produced for the factor
-analysis solution (lower one). This plot shows the number of factors retain by
+the principal component analysis solution
+(figure \ref{fig:indexAccuracyPlot}). Below it, a plot is produced for the factor
+analysis solution. This plot shows the number of factors retain by
 each index. It can be seen that the \emph{af} and \emph{R2} indices underestimate
 the number of
 factors, while the \emph{p.b} and \emph{t.p} clearly show overestimation.
@@ -186,9 +185,9 @@ par(mfrow=c(1,1))
 
 \newpage
 An eigen boxplot is produced to show the probability distribution of the simulated
-eigenvalues from the principal components analysis solution
-(figure \ref{fig:eigenBoxplot}). Another plot is also produced for the factor
-analysis solution (lower one). For the sake of a better graphical presentation,
+eigenvalues from the principal component analysis solution
+(figure \ref{fig:eigenBoxplot}). Below it, a plot is produced for the factor
+analysis solution. For the sake of a better graphical presentation,
 only the first 10 eigenvalues are illustrated. It can be seen that the distribution
 of the first eigenvalue is asymetric for the principal component analysis,
 while it is somewhat symetric for the factor analysis. \\
@@ -223,7 +222,7 @@ par(mfrow=c(1,1))
 \label{fig:eigenBoxplot}
 \end{figure}
 
-
+\newpage
 \textbf{References} \\
 
  Raiche, G., Riopel, M. and Blais, J.-G. (2006). \emph{Non graphical solutions for the Cattell's scree test}.

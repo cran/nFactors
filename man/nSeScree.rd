@@ -1,7 +1,7 @@
 \name{nSeScree}
 \alias{nSeScree}
 
-\title{ Standard Error Scree and Coeffcient of Determination Procedures to
+\title{ Standard Error Scree and Coefficient of Determination Procedures to
         Determine the Number of Components/Factors}
 
 \description{
@@ -20,7 +20,7 @@
   \item{cor}{     logical: if \code{TRUE} computes eigenvalues from a correlation
                   matrix, else from a covariance matrix}
   \item{model}{   character: \code{"components"} or \code{"factors"} }
-  \item{details}{ logical: if \code{TRUE} also return detains about the computation for each eigenvalue.}
+  \item{details}{ logical: if \code{TRUE} also returns details about the computation for each eigenvalue.}
   \item{r2limen}{ numeric: criterion value retained for the coefficient of determination indices.}
   \item{...}{     variable: additionnal parameters to give to the \code{eigenComputes}
                   and \code{cor} or \code{cov} functions}
@@ -29,7 +29,7 @@
 \details{
   The Zoski and Jurs \eqn{S_{Y \bullet X}} index is the standard error of the estimate
   (predicted) eigenvalues by the regression from the \eqn{(k+1, \ldots, p)} subsequent
-  rank of the eigenvalues. The standard error is computed as:
+  ranks of the eigenvalues. The standard error is computed as:
   
   (1)   \eqn{\qquad \qquad S_{Y \bullet X} =
          \sqrt{ \frac{(\lambda_k - \hat{\lambda}_k)^2} {p-2} } } \cr
@@ -40,7 +40,7 @@
   
   The Nelson \eqn{R^2} index is simply the multiple regresion coefficient of
   determination for the \eqn{k+1, \ldots, p} eigenvalues.
-  Note that Nelson didn't give formal prescription for the criteria for this
+  Note that Nelson didn't give formal prescriptions for the criteria for this
   index. He only suggested that a value of 0.75 or more must be considered. More
   is to be done to explore adequate values.
  }
@@ -48,7 +48,7 @@
 
 \value{
   \item{nFactors}{ numeric: number of components/factors retained by the seScree procedure. }
-  \item{details}{  numeric: matrix of the details for each indices.}
+  \item{details}{  numeric: matrix of the details for each index.}
  }
  
 \references{

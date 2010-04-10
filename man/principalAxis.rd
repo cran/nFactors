@@ -3,14 +3,14 @@
 \title{ Principal Axis Analysis }
 
 \description{
- The \code{PrincipalAxis} function return a principal axis analysis without
+ The \code{PrincipalAxis} function returns a principal axis analysis without
  iterated communalities estimates. Three different choices of communalities
  estimates are given: maximum corelation, multiple correlation or estimates based
- on the sum of the sqared principal component analysis loadings. Generally statistical
+ on the sum of the squared principal component analysis loadings. Generally statistical
  packages initialize the the communalities at the multiple correlation value (usual inverse or generalized inverse).
  Unfortunately, this strategy cannot deal with singular correlation or covariance matrices.
  If a generalized inverse, the maximum correlation or the estimated communalities based on the sum of loading
- are used insted, then a solution can be computed.
+ are used instead, then a solution can be computed.
  }
 
 \usage{
@@ -34,10 +34,10 @@
  }
 
 \references{
- Kim, J.-O., Mueller, C. W. (1978). \emph{Introduction to factor analysis. What it
+ Kim, J.-O. and Mueller, C. W. (1978). \emph{Introduction to factor analysis. What it
   is and how to do it}. Beverly Hills, CA: Sage.
 
- Kim, J.-O., Mueller, C. W. (1987). \emph{Factor analysis. Statistical methods and
+ Kim, J.-O. and Mueller, C. W. (1987). \emph{Factor analysis. Statistical methods and
   practical issues}. Beverly Hills, CA: Sage.
  }
 
@@ -70,12 +70,12 @@
 # Factor analysis: Principal axis factoring
 # without iterated communalities -
 # Kim and Mueller (1978, p. 21)
-# Replace upper diagonal by lower diagonal
+# Replace upper diagonal with lower diagonal
  RU <- diagReplace(R, upper=TRUE)
  principalAxis(RU, nFactors=2, communalities="component")
  principalAxis(RU, nFactors=2, communalities="maxr")
  principalAxis(RU, nFactors=2, communalities="multiple")
-# Replace lower diagonal by upper diagonal
+# Replace lower diagonal with upper diagonal
  RL <- diagReplace(R, upper=FALSE)
  principalAxis(RL, nFactors=2, communalities="component")
  principalAxis(RL, nFactors=2, communalities="maxr")

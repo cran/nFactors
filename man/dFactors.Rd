@@ -26,7 +26,7 @@
 
  Bentler dataset:          Bentler and Yuan (1998, p. 139-140)
 
- Buja datasets:            Buja and Eyuboglu (1992, p. 516, 519) < Number of subjects not specified by Baju and Eyuboglu >
+ Buja datasets:            Buja and Eyuboglu (1992, p. 516, 519) < Number of subjects not specified by Buja and Eyuboglu >
 
  Cliff datasets:           Cliff (1970, p. 165)
 
@@ -57,7 +57,7 @@
  Jaejon Song, B. A., Walls, T. A. and Raiche, G. (2008). \emph{Numerical solutions
   for Cattel's scree test: application to the adolescent smoking consequences
   questionnaire (ASCQ)}. Paper presented at the International Annual meeting of the
-  Psychometric Society, Duram, New Hamphire.
+  Psychometric Society, Durham, New Hamphire.
   [\url{http://www.er.uqam.ca/nobel/r17165/RECHERCHE/COMMUNICATIONS/}]
 
  Lawley, D. N. and Maxwell, A. E. (1971). \emph{Factor analysis as a statistical
@@ -66,7 +66,7 @@
  Raiche, G., Langevin, L., Riopel, M. and Mauffette, Y. (2006). Etude exploratoire
   de la dimensionnalite et des facteurs expliques par une traduction francaise de
   l'Inventaire des approches d'enseignement de Trigwell et Prosser dans trois
-  universite québecoise \emph{Mesure et Evaluation en Education, 29}(2), 41-61.
+  universite quebecoises. \emph{Mesure et Evaluation en Education, 29}(2), 41-61.
 
  Raiche, G., Riopel, M. and Blais, J.-G. (2006). \emph{Non graphical solutions
   for the Cattell's scree test}. Paper presented at the International Annual

@@ -4,7 +4,7 @@
 \title{ Plot of the Usual Cattell's Scree Test }
 
 \description{
-  \code{uScree} Plot a usual scree test of the eigenvalues of a correlation matrix. 
+  \code{uScree} plot a usual scree test of the eigenvalues of a correlation matrix.
  }
 
 \usage{
@@ -31,7 +31,7 @@
  }
 
 \value{
-  Nothing returned by this function.
+  Nothing returned with this function.
  }
 
 \references{ 
@@ -59,6 +59,6 @@
  plotuScree(x=eig)
  }
 
-\keyword{ multivariate }
+\keyword{ Graphics }
 
 

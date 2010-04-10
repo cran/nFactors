@@ -4,7 +4,7 @@
 
 \description{
  The \code{componentAxis} function returns a principal component analysis
- with the first n components retained.
+ with the first \emph{n} components retained.
  }
 
 \usage{
@@ -24,10 +24,10 @@
  }
  
 \references{
- Kim, J.-O., Mueller, C. W. (1978). \emph{Introduction to factor analysis. What it
+ Kim, J.-O. and Mueller, C. W. (1978). \emph{Introduction to factor analysis. What it
   is and how to do it}. Beverly Hills, CA: Sage.
 
- Kim, J.-O., Mueller, C. W. (1987). \emph{Factor analysis. Statistical methods and
+ Kim, J.-O. and Mueller, C. W. (1987). \emph{Factor analysis. Statistical methods and
   practical issues}. Beverly Hills, CA: Sage.
  }
 
@@ -57,7 +57,7 @@
                 0.160, 0.140, 0.120, 0.350, 0.300, 1.00),
                 nrow=6, byrow=TRUE)
                 
-# Factor analysis: Selected principal components - Kim et Mueller
+# Factor analysis: Selected principal components - Kim and Mueller
 # (1978, p. 20)
  componentAxis(R, nFactors=2)
 

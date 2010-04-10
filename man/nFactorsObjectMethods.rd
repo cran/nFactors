@@ -3,7 +3,7 @@
 \alias{print.nFactors}
 \alias{summary.nFactors}
 
-\title{ Utility Functions for nScree Class Objects}
+\title{ Utility Functions for nFactors Class Objects}
 
 \description{
  Utility functions for \code{nFactors} class objects.
@@ -71,7 +71,7 @@
  res <- nMreg(eig);       res; is.nFactors(res); summary(res, digits=2)
  res <- nSeScree(eig);    res; is.nFactors(res); summary(res, digits=2)
  
-## SIMILAR RESULTS, BUT NOT A nFacors OBJECT
+## SIMILAR RESULTS, BUT NOT A nFactors OBJECT
  res <- nScree(eig);      res; is.nFactors(res); summary(res, digits=2)
  }
 

@@ -25,8 +25,8 @@
   \item{alpha}{      numeric: statistical significance level.}
   \item{cor}{        logical: if \code{TRUE} computes eigenvalues from a correlation
                      matrix, else from a covariance matrix}
-  \item{details}{    logical: if \code{TRUE} also return detains about the
-                     computation for each eigenvalues.}
+  \item{details}{    logical: if \code{TRUE} also returns detains about the
+                     computation for each eigenvalue.}
   \item{minPar}{     numeric: minimums for the coefficient of the linear trend to maximize.}
   \item{maxPar}{     numeric: maximums for the coefficient of the linear trend to maximize.}
   \item{...}{        variable: additionnal parameters to give to the \code{cor} or
@@ -36,9 +36,10 @@
 
 \details{
   The implemented Bentler and Yuan's procedure must be used with care because
-  the minimized function is not always stable. Bentler and Yan (1996, 1998)
-  already note it. Constraints must be applied to obtain a solution in many
-  cases. The actual implementation did it, but the user can modify
+  the minimized function is not always stable, as Bentler and Yan (1996, 1998)
+  already noted. In many
+  cases, constraints must applied to obtain a solution,
+  as the actual implementation did, but the user can modify
   these constraints.
 
   The hypothesis tested (Bentler and Yuan, 1996, equation 10) is: \cr \cr
@@ -95,9 +96,9 @@
     Universite du Quebec a Montreal\cr
     \email{raiche.gilles@uqam.ca}, \url{http://www.er.uqam.ca/nobel/r17165/} \cr \cr
     David Magis \cr
-    Research Group of Quantitative Psychology and Individual Differences \cr
-    Katholieke Universiteit Leuven \cr
-    \email{David.Magis@psy.kuleuven.be}, \url{http://ppw.kuleuven.be/okp/home/}
+    Departement de mathematiques \cr
+    Universite de Liege \cr
+    \email{David.Magis@ulg.ac.be}
  }
 
 \seealso{

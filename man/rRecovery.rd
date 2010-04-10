@@ -3,7 +3,7 @@
 \title{ Test of Recovery of a Correlation or a Covariance matrix from a Factor Analysis Solution }
 
 \description{
- The \code{rRecovery} function return a verification of the quality of the recovery
+ The \code{rRecovery} function returns a verification of the quality of the recovery
  of the initial correlation or covariance matrix by the factor solution.
   }
 
@@ -14,7 +14,7 @@
 \arguments{
   \item{R}{                 numeric: initial correlation or covariance matrix}
   \item{loadings}{          numeric: loadings from a factor analysis solution}
-  \item{diagCommunalities}{ logical: if \code{TRUE}, the correlation between the initail
+  \item{diagCommunalities}{ logical: if \code{TRUE}, the correlation between the initial
                             solution and the estimated one will use a correlation
                             of one in the diagonal. If \code{FALSE} (default) the diagonal
                             is not used in the computation of this correlation.}
@@ -26,7 +26,7 @@
   \item{difference}{ numeric: difference between initial and recovered estimated
                      correlation or covariance matrix}
   \item{cor}{        numeric: Pearson correlation between initial and recovered estimated
-                     correlation or covariance matrix. Computions depend on the
+                     correlation or covariance matrix. Computations depend on the
                      logical value of the \code{communalities} argument. }
  }
 
@@ -57,7 +57,7 @@
                 nrow=6, byrow=TRUE)
 
 
-# Replace upper diagonal by lower diagonal
+# Replace upper diagonal with lower diagonal
  RU         <- diagReplace(R, upper=TRUE)
  nFactors   <- 2
  loadings   <- principalAxis(RU, nFactors=nFactors,
@@ -79,5 +79,5 @@
 
  }
 
-\keyword{ multivariate }
+\keyword{ utilities }
 

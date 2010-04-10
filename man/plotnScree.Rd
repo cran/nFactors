@@ -79,5 +79,5 @@
  plotnScree(results)
  }
  
-\keyword{ multivariate }
+\keyword{ Graphics }
 

@@ -21,7 +21,7 @@
   \item{cor}{     logical: if \code{TRUE} computes eigenvalues from a correlation
                   matrix, else from a covariance matrix}
   \item{model}{   character: \code{"components"} or \code{"factors"} }
-  \item{details}{ logical: if \code{TRUE} also return detains about the computation for each eigenvalues.}
+  \item{details}{ logical: if \code{TRUE} also returns details about the computation for each eigenvalue.}
   \item{...}{     variable: additionnal parameters to give to the \code{eigenComputes}
                   and \code{cor} or \code{cov} functions}
  }

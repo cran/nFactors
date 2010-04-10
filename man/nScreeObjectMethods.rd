@@ -21,8 +21,8 @@
  }
 
 \arguments{
-  \item{x}{         nScree: an object of the class nScree}
-  \item{object}{    nScree: an object of the class nScree}
+  \item{x}{         nScree: an object of the class \code{nScree}}
+  \item{object}{    nScree: an object of the class \code{nScree}}
   \item{...}{       variable: additionnal parameters to give to the \code{print}
                     function with \code{print.nScree}, the \code{plotnScree} with
                     \code{plot.nScree} or to the \code{summary} function with
@@ -33,8 +33,8 @@
 \value{
  Generic functions for the nScree class:
 
-  \item{is.nScree}{       logical: is the object of the class nScree? }
-  \item{plot.nScree }{    graphic: plots a figure according to the \code{plotnScre}
+  \item{is.nScree}{       logical: is the object of the class \code{nScree}? }
+  \item{plot.nScree }{    graphic: plots a figure according to the \code{plotnScree}
                           function}
   \item{print.nScree }{   numeric: vector of the number of components/factors to
                           retain: same as the \code{Components} vector from the \code{nScree}

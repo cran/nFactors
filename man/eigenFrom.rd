@@ -1,11 +1,11 @@
 \name{eigenFrom}
 \alias{eigenFrom}
-\title{ Identify the Data Type to Obtain the Eigenvalues From}
+\title{ Identify the Data Type to Obtain the Eigenvalues}
 
 \description{
- The \code{eigenFrom} function identifies the data type to obtain the
- eigenvalues from. The function is used internally in many fonctions of
- the \pkg{nFactors} to be able to apply these to a vector of eigenvalues,
+ The \code{eigenFrom} function identifies the data type from which to obtain the
+ eigenvalues. The function is used internally in many functions of
+ the \pkg{nFactors} package to be able to apply these to a vector of eigenvalues,
  a matrix of correlations or covariance or a \code{data.frame}.
  }
 
@@ -19,7 +19,7 @@
  }
 
 \value{
-  \item{value}{ character: return the data type to obtain the eigenvalues from:
+  \item{value}{ character: return the data type to obtain the eigenvalues:
                 \code{"eigenvalues"}, \code{"correlation"} or \code{"data"} }
  }
 

@@ -8,8 +8,7 @@
   for the linear trend in eigenvalues of a covariance matrix.
   The related \eqn{\chi^2} and \emph{p}-value are also computed.
   This function is generally called from the \code{nBentler} function.
-  But it could be of interest to use it for graphing the linear trend function to
-  minimize and so to study it's behavior.
+  But it could be of use for graphing the linear trend function and to study it's behavior.
  }
 
 \usage{
@@ -32,14 +31,14 @@
   \item{log}{        logical: if \code{TRUE} the minimization is applied on the log values.}
   \item{cor}{        logical: if \code{TRUE} computes eigenvalues from a correlation
                      matrix, else from a covariance matrix}
-  \item{minPar}{     numeric: minimums for the coefficient of the linear trend to minimize.}
-  \item{maxPar}{     numeric: maximums for the coefficient of the linear trend to minimize.}
+  \item{minPar}{     numeric: minimums for the coefficient of the linear trend.}
+  \item{maxPar}{     numeric: maximums for the coefficient of the linear trend.}
   \item{resParx}{    numeric: restriction on the \eqn{\alpha} coefficient (x) to graph the function to minimize.}
   \item{resPary}{    numeric: restriction on the \eqn{\beta} coefficient (y) to graph the function to minimize.}
-  \item{graphic}{    logical: if \code{TRUE} plot the minimized function \code{"wireframe"},
+  \item{graphic}{    logical: if \code{TRUE} plots the minimized function \code{"wireframe"},
                      \code{"contourplot"} or \code{"levelplot"}.}
   \item{resolution}{ numeric: resolution of the 3D graph (number of points from \eqn{\alpha} and from \eqn{\beta}).}
-  \item{typePlot}{   character: plot the minimized function according to a 3D plot: \code{"wireframe"},
+  \item{typePlot}{   character: plots the minimized function according to a 3D plot: \code{"wireframe"},
                      \code{"contourplot"} or \code{"levelplot"}.}
   \item{...}{        variable: additionnal parameters from the \code{"wireframe"},
                      \code{"contourplot"} or \code{"levelplot"} \code{lattice}
@@ -48,9 +47,8 @@
  
 \details{
   The implemented Bentler and Yuan's procedure must be used with care because
-  the minimized function is not always stable. Bentler and Yan (1996, 1998)
-  already note it. Constraints must be applied to obtain a solution in many
-  cases. The actual implementation did it, but the user can modify
+  the minimized function is not always stable. In many cases, constraints must applied to obtain a solution.
+  The actual implementation did, but the user can modify
   these constraints.
 
   The hypothesis tested (Bentler and Yuan, 1996, equation 10) is: \cr \cr
@@ -110,9 +108,9 @@
     Universite du Quebec a Montreal\cr
     \email{raiche.gilles@uqam.ca}, \url{http://www.er.uqam.ca/nobel/r17165/} \cr \cr
     David Magis \cr
-    Research Group of Quantitative Psychology and Individual Differences \cr
-    Katholieke Universiteit Leuven \cr
-    \email{David.Magis@psy.kuleuven.be}, \url{http://ppw.kuleuven.be/okp/home/}
+    Departement de mathematiques \cr
+    Universite de Liege \cr
+    \email{David.Magis@ulg.ac.be}
  }
 
 \seealso{

@@ -21,18 +21,18 @@
   \item{loadings}{  numeric:   vector of the major loadings on each component/factor}
   \item{unique}{    numeric:   vector of the unique loadings on each component/factor}
   \item{N}{         numeric:   vector of the number of subjects/observations}
-  \item{repsim}{    numeric:   number of replication of the matrix correlation
+  \item{repsim}{    numeric:   number of replications of the matrix correlation
                     simulation}
-  \item{reppar}{    numeric:   number of replication for the parallel and permutation analysis}
+  \item{reppar}{    numeric:   number of replications for the parallel and permutation analysis}
   \item{stats}{     numeric:   vector of the statistics to return: mean(1),
                     median(2), sd(3), quantile(4), min(5), max(6)}
   \item{quantile}{  numeric:   quantile for the parallel and permutation analysis}
   \item{model}{     character: \code{"components"} or \code{"factors"} }
-  \item{r2limen}{   numeric:   R2 limen value for the R2 index of Nelson}
-  \item{all}{       logical:   if \code{TRUE} computes athe Bentler and Yuan
-                    index (very long computating time to consider)}
-  \item{dir}{       character:  Directory where to save output. Default to NA}
-  \item{trace}{     logical:   if \code{TRUE} output details of the status of the simulations}
+  \item{r2limen}{   numeric:   R2 limen value for the R2 Nelson index}
+  \item{all}{       logical:   if \code{TRUE} computes the Bentler and Yuan
+                    index (very long computing time to consider)}
+  \item{dir}{       character:  directory where to save output. Default to NA}
+  \item{trace}{     logical:   if \code{TRUE} outputs details of the status of the simulations}
  }
 
 \value{
@@ -48,7 +48,7 @@
 
 \references{
   Zwick, W. R. and Velicer, W. F. (1986). Comparison of five rules for
-   determining the number of components to retain. \emph{Psychological bulletin, 99}, 432-442.
+   determining the number of components to retain. \emph{Psychological Bulletin, 99}, 432-442.
  }
 
 \author{ 
@@ -59,6 +59,7 @@
  }
 
 \examples{
+\dontrun{
 # ....................................................................
 # Example inspired from Zwick and Velicer (1986)
 # Very long computimg time
@@ -86,6 +87,7 @@
 # residuals <- results[,c(11:25)] - X$nfactors
 # BY        <- c("nsubjects","var","loadings")
 # round(aggregate(residuals, by=results[BY], mean),0)
+ }
  }
 
 \keyword{ multivariate }

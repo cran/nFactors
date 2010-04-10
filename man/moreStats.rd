@@ -5,7 +5,7 @@
 
 \description{
   This function produces another summary of a \code{data.frame}. This function
-  was proposed to be able to apply some functions globally on a \code{data.frame}:
+  was proposed in order to apply some functions globally on a \code{data.frame}:
   \code{quantile}, \code{median}, \code{min} and \code{max}. The usual \emph{R}
   version cannot do so.
  }
@@ -18,7 +18,7 @@
 
   \item{x}{          numeric: matrix or \code{data.frame}.}
   \item{quantile}{   numeric: quantile of the distribution.}
-  \item{show}{       logical: if \code{TRUE} prints the quantile chosen.}
+  \item{show}{       logical: if \code{TRUE} prints the quantile choosen.}
  }
  
 \value{

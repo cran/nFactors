@@ -5,6 +5,14 @@
         ******************************************************
 
 ------------------------------------------
+- Changes in nFactors 2.3.2 (2010-10-04) -
+------------------------------------------
+
+ Changes in this version are stricly limited to orthographical correction 
+ of the documentation.
+
+
+------------------------------------------
 - Changes in nFactors 2.3.1 (2009-14-10) -
 ------------------------------------------
 
@@ -16,9 +24,10 @@
      names of the data.frame return from structureSim: the per and mean.eig
      columns were unfortunalely inrerchanged. Version 2.3.1 fixed it.
 
-  o  Bug fixing was the occasion to introduce a new function used for a
-  paper proposed to Behaviormetrika, studySim. But this function is useful for
-  many other simulation settings.
+  o  Bug fixing was the occasion to introduce a new function used for a 
+     paper proposed to Behaviormetrika, studySim. But this function is 
+     useful for many other simulation settings.
+
 
 ----------------------------------------
 - Changes in nFactors 2.3 (2009-15-09) -

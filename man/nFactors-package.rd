@@ -6,7 +6,7 @@
 
 
 \description{
- Indices, heuristics and strategies to help to determine the number of factors/components to retain:
+ Indices, heuristics and strategies to help determine the number of factors/components to retain:
   \enumerate{
   \item{- }{ Acceleration factor (\emph{noc} with or without Parallel Analysis)  }
   \item{- }{ Optimal Coordinates (\emph{noc} with or without Parallel Analysis) }
@@ -28,9 +28,9 @@
  \tabular{ll}{
   Package: \tab nFactors \cr
   Type:    \tab Package \cr
-  Version: \tab 2.3.1 \cr
-  Date:    \tab 2009-09-01 \cr
-  Depends: \tab R (>= 2.0.0), MASS, psych, boot \cr
+  Version: \tab 2.3.2 \cr
+  Date:    \tab 2010-04-10 \cr
+  Depends: \tab R (>= 2.9.2), MASS, psych, boot \cr
   License: \tab GPL \cr
   }
  }
@@ -42,9 +42,9 @@
     Universite du Quebec a Montreal\cr
     \email{raiche.gilles@uqam.ca}, \url{http://www.er.uqam.ca/nobel/r17165/} \cr \cr
     David Magis \cr
-    Research Group of Quantitative Psychology and Individual Differences \cr
-    Katholieke Universiteit Leuven \cr
-    \email{David.Magis@psy.kuleuven.be}, \url{http://ppw.kuleuven.be/okp/home/}
+    Departement de mathematiques \cr
+    Universite de Liege \cr
+    \email{David.Magis@ulg.ac.be}
  }
 
  \references{
@@ -56,7 +56,7 @@
 
 
 \seealso{
- Other packages are also very useful for principal components and factor analysis. The \emph{R} psychometric view is instructive at this point.
+ Other packages are also very useful for principal component and factor analysis. The \emph{R} psychometric view is instructive at this point.
  See \url{http://cran.stat.sfu.ca/web/views/Psychometrics.html} for further details.
  }
 

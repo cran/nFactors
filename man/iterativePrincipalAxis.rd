@@ -7,13 +7,13 @@
  iterated communality estimates. Four different choices of initial communality
  estimates are given: maximum correlation, multiple correlation (usual and
  generalized inverse) or estimates based
- on the sum of the squared principal component analysis loadings. Generally statistical
+ on the sum of the squared principal component analysis loadings. Generally, statistical
  packages initialize the communalities at the multiple correlation value.
  Unfortunately, this strategy cannot always deal with singular correlation or
  covariance matrices.
  If a generalized inverse, the maximum correlation or the estimated communalities
  based on the sum of loadings
- are used insted, then a solution can be computed.
+ are used instead, then a solution can be computed.
  }
 
 \usage{
@@ -46,10 +46,10 @@
  }
 
 \references{
- Kim, J.-O., Mueller, C. W. (1978). \emph{Introduction to factor analysis. What it
+ Kim, J.-O. and Mueller, C. W. (1978). \emph{Introduction to factor analysis. What it
   is and how to do it}. Beverly Hills, CA: Sage.
 
- Kim, J.-O., Mueller, C. W. (1987). \emph{Factor analysis. Statistical methods and
+ Kim, J.-O. and Mueller, C. W. (1987). \emph{Factor analysis. Statistical methods and
   practical issues}. Beverly Hills, CA: Sage.
  }
 
@@ -81,7 +81,7 @@
 
 # Factor analysis: Principal axis factoring with iterated communalities
 # Kim and Mueller (1978, p. 23)
-# Replace upper diagonal by lower diagonal
+# Replace upper diagonal with lower diagonal
  RU         <- diagReplace(R, upper=TRUE)
  nFactors   <- 2
  fComponent <- iterativePrincipalAxis(RU, nFactors=nFactors,

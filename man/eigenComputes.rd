@@ -4,8 +4,8 @@
 
 \description{
  The \code{eigenComputes} function computes eigenvalues from the identified data
- type. The function is used internally in many
- fonctions of the \pkg{nFactors} package to be able to apply these to a vector of
+ type. It is used internally in many
+ fonctions of the \pkg{nFactors} package in order to apply these to a vector of
  eigenvalues, a matrix of correlations or covariance or a data frame.
  }
 

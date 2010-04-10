@@ -3,7 +3,7 @@
 \title{ Population or Simulated Sample Correlation Matrix from a Given Factor Structure Matrix}
 
 \description{
- The \code{structureSim} function return a population and a sample correlation
+ The \code{structureSim} function returns a population and a sample correlation
  matrices from a predefined congeneric factor structure.
  }
 
@@ -15,19 +15,19 @@
 
 \arguments{
   \item{fload}{     matrix:    loadings of the factor structure}
-  \item{reppar}{    numeric:   number of replication for the parallel analysis}
-  \item{repsim}{    numeric:   number of replication of the matrix correlation
+  \item{reppar}{    numeric:   number of replications for the parallel analysis}
+  \item{repsim}{    numeric:   number of replications of the matrix correlation
                     simulation}
   \item{N}{         numeric:   number of subjects}
   \item{quantile}{  numeric:   quantile for the parallel analysis}
   \item{model}{     character: \code{"components"} or \code{"factors"} }
-  \item{adequacy}{  logical:   if \code{TRUE} print the recovered population
+  \item{adequacy}{  logical:   if \code{TRUE} prints the recovered population
                     matrix from the factor structure}
-  \item{details}{   logical:   if \code{TRUE} output details of the
+  \item{details}{   logical:   if \code{TRUE} outputs details of the
                     \code{repsim} simulations }
-  \item{r2limen}{   numeric:   R2 limen value for the R2 index of Nelson}
-  \item{all}{       logical:   if \code{TRUE} computes athe Bentler and Yuan
-                    index (very long computating time to consider)}
+  \item{r2limen}{   numeric:   R2 limen value for the R2 Nelson index }
+  \item{all}{       logical:   if \code{TRUE} computes the Bentler and Yuan
+                    index (very long computing time to consider)}
  }
 
 \value{
@@ -35,7 +35,7 @@
                  returns only statistics about the eigenvalues: mean, median, quantile,
                  standard deviation, minimum and maximum. If \code{TRUE},
                  returns also details about the \code{repsim} simulations.
-                 If \code{adequacy} = \code{TRUE} return the recovered factor structure}
+                 If \code{adequacy} = \code{TRUE} returns the recovered factor structure}
  }
 
 \seealso{
@@ -46,7 +46,7 @@
 
 \references{
   Zwick, W. R. and Velicer, W. F. (1986). Comparison of five rules for
-   determining the number of components to retain. \emph{Psychological bulletin, 99}, 432-442.
+   determining the number of components to retain. \emph{Psychological Bulletin, 99}, 432-442.
  }
 
 \author{ 
@@ -57,6 +57,7 @@
  }
 
 \examples{
+\dontrun{
 # .......................................................
 # Example inspired from Zwick and Velicer (1986, table 2, p. 437)
 ## ...................................................................
@@ -95,6 +96,7 @@
          xlab="Components")
  par(mfrow=c(1,1))
 # ......................................................
+ }
  }
 
 \keyword{ multivariate }

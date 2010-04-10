@@ -19,9 +19,9 @@
   \item{alpha}{      numeric: statistical significance level }
   \item{cor}{        logical: if \code{TRUE} computes eigenvalues from a correlation
                      matrix, else from a covariance matrix}
-  \item{details}{    logical: if \code{TRUE} also return detains about the
+  \item{details}{    logical: if \code{TRUE} also returns detains about the
                      computation for each eigenvalue}
-  \item{correction}{ logical: if \code{TRUE} use a correction for the degree
+  \item{correction}{ logical: if \code{TRUE} uses a correction for the degree
                      of freedom after the first eigenvalue}
   \item{...}{        variable: additionnal parameters to give to the \code{cor} or
                      \code{cov} functions}
@@ -34,7 +34,7 @@
 
  This hypothesis is verified by the application of different version of a
  \eqn{\chi^2} test with different values for the degrees of freedom.
- Each of these tests share the compution of a \eqn{V_k} value: \cr
+ Each of these tests shares the compution of a \eqn{V_k} value: \cr
 
  (2) \eqn{\qquad \qquad V_k  =
       \prod\limits_{i = k + 1}^p {\left\{ {{{\lambda _i }
@@ -43,8 +43,8 @@
       \!\lower0.7ex\hbox{$q$}}\sum\limits_{i = k + 1}^p {\lambda _i } }}} \right\}}
       }
 
- Where \eqn{p} being the number of eigenvalues, \eqn{k} the number of eigenvalues to test,
- and \eqn{q} the \eqn{p-k} remaining eigenvalues. With \eqn{n} equal to the sample size
+ \eqn{p} is the number of eigenvalues, \eqn{k} the number of eigenvalues to test,
+ and \eqn{q} the \eqn{p-k} remaining eigenvalues. \eqn{n} is equal to the sample size
  minus 1 (\eqn{n = N-1}). \cr
 
 
@@ -56,7 +56,7 @@
 
   An improvement of this statistic from Bartlett (Bentler, and Yuan, 1996, p. 300;
   Horn and Engstrom, 1979, equation 8) is distributed as a \eqn{\chi^2}
-  with \eqn{(q)(q - 1)/2} degrees of freedom is equal to: \cr
+  with \eqn{(q)(q - 1)/2} degrees of freedom and is equal to: \cr
 
  (4) \eqn{\qquad \qquad - \left[ {n - k - {{2q^2 q + 2} \over {6q}}}
      \right]\log (V_k ) \sim \chi _{(q + 2)(q - 1)/2}^2 }  \cr
@@ -68,14 +68,14 @@
       - \bar \lambda _q } \right)^2 }}} } \right]\log (V_k ) \sim \chi _{(q + 2)(q - 1)/2}^2 } \cr
 
   Bartlett (1950, 1951) proposed a correction to the degrees of freedom of these \eqn{\chi^2} after the
-  first siginificant test that is \eqn{(q+2)(q - 1)/2}. \cr
+  first significant test: \eqn{(q+2)(q - 1)/2}. \cr
  }
 
 
 \value{
   \item{nFactors}{ numeric: vector of the number of factors retained by the
                    Bartlett, Anderson and Lawley procedures. }
-  \item{details}{  numeric: matrix of the details for each indices.}
+  \item{details}{  numeric: matrix of the details for each index.}
  }
  
 \references{
@@ -104,7 +104,7 @@
  matrix. \emph{In} P. K. Krishna (Eds): \emph{Multivariate analysis, volume 2}.
  New-York, NJ: Academic Press.
   
- Lawley, D. N. (1956). Tests of significance for the latemt roots of covariance
+ Lawley, D. N. (1956). Tests of significance for the latent roots of covariance
   and correlation matrix. \emph{Biometrika, 43}(1/2), 128-136.
  }
 

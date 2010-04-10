@@ -20,8 +20,8 @@
  }
 
 \arguments{
-  \item{parallel}{ numeric:   vector of the result of a previous parallel analysis }
-  \item{eig}{      depreciated parameter: Eigenvalues to analyse (not used if
+  \item{parallel}{ numeric:   vector of the results of a previous parallel analysis }
+  \item{eig}{      depreciated parameter: eigenvalues to analyse (not used if
                    x is used, recommended)}
   \item{x}{        numeric: a \code{vector} of eigenvalues, a \code{matrix} of
                    correlations or of covariances or a \code{data.frame} of data}
@@ -83,5 +83,5 @@
 
  }
  
-\keyword{ multivariate }
+\keyword{ Graphics }
 

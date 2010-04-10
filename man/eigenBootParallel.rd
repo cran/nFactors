@@ -4,11 +4,11 @@
 
 \description{
  The \code{eigenBootParallel} function samples observations from a \code{data.frame}
- to produces correlation or covariance matrix from which eigenvalues are computed. The
+ to produce correlation or covariance matrices from which eigenvalues are computed. The
  function returns statistics about these bootstrapped eigenvalues. Their means
- or their quantile could be used later to replace the eigenvalues inputed to
- a parallel analysis.  The \code{eigenBootParallel} can also computes random eigenvalues
- from empirical data by columns permutation (Buja and Eyuboglu, 1992).
+ or their quantile could be used later to replace the eigenvalues inputted to
+ a parallel analysis.  The \code{eigenBootParallel} can also compute random eigenvalues
+ from empirical data by column permutation (Buja and Eyuboglu, 1992).
  }
 
 \usage{
@@ -18,7 +18,7 @@
 
 \arguments{
   \item{x}{           data.frame: data from which a correlation matrix will be obtained}
-  \item{quantile}{    numeric: eigenvalues quantile that will be reported }
+  \item{quantile}{    numeric: eigenvalues quantile to be reported }
   \item{nboot}{       numeric: number of bootstrap samples }
   \item{option}{      character: \code{"permutation"} or \code{"bootstrap"}}
   \item{cor}{         logical: if \code{TRUE} computes eigenvalues from a correlation
@@ -71,7 +71,7 @@
 # ......................................................
 
 # ......................................................
-# Bootstrap distributions stude of the eigenvalues from iris data
+# Bootstrap distributions study of the eigenvalues from iris data
 # with different correlation methods
  eigenBootParallel(x=iris[,-5],quantile=0.05,
                    option="bootstrap",method="pearson")

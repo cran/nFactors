@@ -9,9 +9,9 @@
 \title{ Utility Functions for nScree Class Objects}
 
 \description{
- Utility functions for \code{structureSim} class objects Note that with the
- \code{plot.structureSim} a black dotted vertical line shows the median number of
- factors retain by all the different indices.
+ Utility functions for \code{structureSim} class objects. Note that with the
+ \code{plot.structureSim} a dotted black vertical line shows the median number of
+ factors retained by all the different indices.
  }
 
 \usage{
@@ -30,10 +30,10 @@
   \item{index}{       numeric: vector of the index of the selected indices}
   \item{main}{        character: main title}
   \item{nFactors}{    numeric: if known, number of factors}
-  \item{object}{      structureSim: an object of the class structureSim}
+  \item{object}{      structureSim: an object of the class \code{structureSim}}
   \item{vLine}{       character: color of the vertical indicator line of the
                       initial number of factors in the eigen boxplot}
-  \item{x}{           structureSim: an object of the class structureSim}
+  \item{x}{           structureSim: an object of the class \code{structureSim}}
   \item{xlab}{        character: x axis label}
   \item{ylab}{        character: y axis label}
   \item{...}{         variable: additionnal parameters to give to the
@@ -43,9 +43,9 @@
 
 
 \value{
- Generic functions for the structureSim class:
+ Generic functions for the \code{structureSim} class:
   \item{boxplot.structureSim }{ graphic: plots an eigen boxplot }
-  \item{is.structureSim}{       logical: is the object of the class structureSim? }
+  \item{is.structureSim}{       logical: is the object of the class \code{structureSim}? }
   \item{plot.structureSim }{    graphic: plots an index acuracy plot}
   \item{print.structureSim }{   numeric: data.frame of statistics about the number
                                 of components/factors to retain according to different indices
@@ -73,6 +73,7 @@
 }
 
 \examples{
+\dontrun{
 ## INITIALISATION
  library(xtable)
  library(nFactors)
@@ -99,6 +100,7 @@ mzwick    <-  structureSim(fload=as.matrix(zwick), reppar=reppar,
  print(mzwick, index=1:10)
  plot(x=mzwick, index=c(1:10), cex.axis=0.7, col="red")
  boxplot(x=mzwick, nFactors=3, vLine="blue", col="red")
+ }
  }
 
 \keyword{ multivariate }

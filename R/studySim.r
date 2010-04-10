@@ -36,7 +36,8 @@ studySim <- function(var, nFactors, pmjc, loadings, unique, N, repsim, reppar,
         result           <- rbind(result, fSim)
         rownames(result) <- 1:dim(result)[1]
         fString          <- paste("RES_", paste(ident,"_", sep="", collapse=""), sep="")
-        if (!is.na(dir)) save("fSim", file=paste(dirPack, fString,".Rdata", sep=""))
+        # if (!is.na(dir)) save("fSim", file=paste(dirPack, fString,".Rdata", sep=""))  # Old erroneous code
+        if (!is.na(dir)) save("fSim", file=paste(dir, fString,".Rdata", sep=""))
   }}}}}}
  return(result)
  }

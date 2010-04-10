@@ -14,7 +14,7 @@
 
 \arguments{
   \item{R}{     numeric: correlation or covariance matrix}
-  \item{upper}{ logical: if \code{TRUE} the upper diagonal is replaced with the lower
+  \item{upper}{ logical: if \code{TRUE} upper diagonal is replaced with lower
                 diagonal. If \code{FALSE}, lower diagonal is replaced with upper diagonal.}
  }
 
@@ -44,13 +44,13 @@
                 .1600, .1400, .1200, .3500, .3000, 1.000),
                 nrow=6, byrow=TRUE)
 
-# Replace upper diagonal by lower diagonal
+# Replace upper diagonal with lower diagonal
  RU <- diagReplace(R, upper=TRUE)
 
-# Replace lower diagonal by upper diagonal
+# Replace lower diagonal with upper diagonal
  RL <- diagReplace(R, upper=FALSE)
 # .......................................................
  }
 
-\keyword{ multivariate }
+\keyword{ manip }
 

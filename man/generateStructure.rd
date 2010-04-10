@@ -3,7 +3,7 @@
 \title{ Generate a Factor Structure Matrix.}
 
 \description{
- The \code{generatStructure} function return a \emph{mjc} factor structure matrix.
+ The \code{generateStructure} function returns a \emph{mjc} factor structure matrix.
  The number of variables per major factor \emph{pmjc} is equal for each factor.
  The argument \emph{pmjc} must be divisible by \emph{nVar}.
  The arguments are strongly inspired from Zick and Velicer (1986, p. 435-436) methodology.

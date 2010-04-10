@@ -3,10 +3,10 @@
 \title{ Non Graphical Cattel's Scree Test}
 
 \description{
- The \code{nScree} function returns an analysis of the number of components or
+ The \code{nScree} function returns an analysis of the number of component or
  factors to retain in an exploratory
- principal components or factor analysis. The function also return
- informations about the number of components/factors to retain with the Kaiser
+ principal component or factor analysis. The function also returns
+ information about the number of components/factors to retain with the Kaiser
  rule and the parallel analysis. 
  }
 
@@ -26,32 +26,35 @@
   \item{cor}{       logical: if \code{TRUE} computes eigenvalues from a correlation
                     matrix, else from a covariance matrix}
   \item{model}{     character: \code{"components"} or \code{"factors"} }
-  \item{criteria}{  numeric: by default fixed at \eqn{\hat{\lambda}}.
-                    When the \eqn{\lambda}s are computed prom a principal components
+  \item{criteria}{  numeric: by default fixed at \eqn{\bar{\lambda}}.
+                    When the \eqn{\lambda}s are computed from a principal component
                     analysis on a correlation matrix, it corresponds to the
                     usual Kaiser \eqn{\lambda >= 1} rule. On a covariance matrix
                     or from a factor analysis, it is simply the mean.
-                    To apply the \eqn{\lambda >= 0} sometimes used with factor
-                    analysis, fixed the criteria to \eqn{0}.}
+                    To apply \eqn{\lambda >= 0}, sometimes used with factor
+                    analysis, fix the criteria to \eqn{0}.}
   \item{...}{       variabe: additionnal parameters to give to the \code{cor} or
                     \code{cov} functions}
  }
 
 \details{
  The \code{nScree} function returns an analysis of the number of components/factors to retain in an exploratory
- principal components or factor analysis. Different solutions are given. The classical ones are the Kaiser rule,
+ principal component or factor analysis. Different solutions are given. The classical ones are the Kaiser rule,
  the parallel analysis, and the usual scree test (\code{\link{plotuScree}}). 
  Non graphical solutions to the Cattell subjective scree test are also proposed: 
  an acceleration factor (\emph{af}) and the optimal coordinates index \emph{oc}. The acceleration factor indicates where the
  elbow of the scree plot appears. It corresponds to the acceleration of the curve, i.e. the second derivative. 
- The optimal coordinates are the extrapolated coordinates of the previous eigenvalue that let the observed eigenvalue 
- be over this extrapolation. The extrapolation is made by a linear regression using the last eigenvalue 
- coordinates and the \eqn{k+1} eigenvalue coordinates. There are \eqn{k-2} regression lines like this. Would it be fot the
- acceleration factor, or for the optimal coordinates, the Kaiser rule or a parallel analysis criterion (\code{\link{parallel}})
- must also be simultaneously satisfied to retain the components/factors.
+ The optimal coordinates are the extrapolated coordinates of the previous eigenvalue that allow the observed
+ eigenvalue
+ to go beyond this extrapolation. The extrapolation is made by a linear regression using the last eigenvalue
+ coordinates and the \eqn{k+1} eigenvalue coordinates. There are \eqn{k-2} regression lines like this.
+ The Kaiser rule or a parallel analysis
+ criterion (\code{\link{parallel}}) must also be simultaneously satisfied to retain the components/factors,
+ whether for the acceleration factor, or for the optimal coordinates.
+
  
  If \eqn{\lambda_i} is the \eqn{i^{th}} eigenvalue, and \eqn{LS_i} is a location statistics like the mean or a centile 
- (generally the following: \eqn{1^{st}, \ 5^{th}, \ 95^{th}, \ or \ 99^{th}}).
+ (generally the followings: \eqn{1^{st}, \ 5^{th}, \ 95^{th}, \ or \ 99^{th}}).
  
  The Kaiser rule is computed as:
   \deqn{ n_{Kaiser} = \sum_{i} (\lambda_{i} \ge \bar{\lambda}).}
@@ -60,11 +63,11 @@
  The parallel analysis is computed as: 
   \deqn{n_{parallel} = \sum_{i} (\lambda_{i} \ge LS_i).}
  
- The acceleration factor (\eqn{AF}) corresponds to a numeral solution to the elbow of the scree plot:
+ The acceleration factor (\eqn{AF}) corresponds to a numerical solution to the elbow of the scree plot:
    \deqn{n_{AF} \equiv \ If \ \left[  (\lambda_{i} \ge LS_i) \ and \ max(AF_i) \right].}
    
- The optimal coordinates (\eqn{OC}) corresponds to an extrapolation of the preceding eigenvalue by a regression 
- line between the eignvalue coordinates and the last eigenvalue coordinate:
+ The optimal coordinates (\eqn{OC}) corresponds to an extrapolation of the preceeding eigenvalue by a regression
+ line between the eigenvalue coordinates and the last eigenvalue coordinates:
    \deqn{n_{OC} = \sum_i \left[(\lambda_i \ge LS_i) \cap (\lambda_i \ge (\lambda_{i \ predicted}) \right].}    
  }
 
@@ -127,10 +130,10 @@
 ## INITIALISATION
  data(dFactors)                      # Load the nFactors dataset
  attach(dFactors)
- vect         <- Raiche              # Use the example from Raiche
- eigenvalues  <- vect$eigenvalues    # Extract the observed eigenvalues
- nsubjects    <- vect$nsubjects      # Extract the number of subjects
- variables    <- length(eigenvalues) # Compute the number of variables
+ vect         <- Raiche              # Uses the example from Raiche
+ eigenvalues  <- vect$eigenvalues    # Extracts the observed eigenvalues
+ nsubjects    <- vect$nsubjects      # Extracts the number of subjects
+ variables    <- length(eigenvalues) # Computes the number of variables
  rep          <- 100                 # Number of replications for PA analysis
  cent         <- 0.95                # Centile value of PA analysis
 
