@@ -2,7 +2,7 @@ Package: nFactors
 Type: Package
 Title: Parallel Analysis and Non Graphical Solutions to the Cattell
         Scree Test
-Version: 2.3.3
+Version: 2.3.3.1
 Date: 2010-04-10
 Encoding: latin1
 Author: Gilles Raiche (Universite du Quebec a Montreal) and David Magis (Universite de Liege)
@@ -23,6 +23,7 @@ Description: Indices, heuristics and strategies to help determine the number of 
                11. Lawley khi-2 and
                12. Bentler-Yuan khi-2.
 License: GPL (>= 2)
-Packaged: 2011-12-19 13:42:55 UTC; HP_Propriétaire
+Packaged: 2019-08-31 09:43:37 UTC; hornik
 Repository: CRAN
-Date/Publication: 2011-12-20 11:47:27
+Date/Publication: 2019-08-31 10:11:55 UTC
+NeedsCompilation: no

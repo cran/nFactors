@@ -1,4 +1,4 @@
-6aaf263e603b7bb1e0adcaffbdd4fbcf *DESCRIPTION
+fcf8ca340956f268468a0db5cda666c8 *DESCRIPTION
 96f663ae7aa55e0539ff9afe9e479609 *NAMESPACE
 4344dcf1f93ff487b6ae039fc0104a98 *NEWS
 1d8ebb87b865d1b679fcf02a2bcab8ea *R/bentlerParameters.r
@@ -31,8 +31,8 @@ cf9e49b4efe0c85abc00e81d27860480 *R/structureSim.r
 0eba153dcca9789d3d81bce25a06debc *R/structureSimObjectMethods.r
 e668d7ce864061c3050ce2987e6a8b1d *R/studySim.r
 62e10a87b133ff96b95c0de43c7a3ad6 *TODO
-4b2c72593c518db555042fd7f148c4ad *data/dFactors.rda
-40c937be28db469d6aa689f9c9e9504e *inst/CITATION
+dfeb8fdce2bc86473efde1dd747e4670 *data/dFactors.rda
+213804be48ab54c08e1ed0c9ff4d3825 *inst/CITATION
 4e27d34d6964e7731972d93c08f74ce8 *inst/doc/nFactors-manual.pdf
 908105f0d74e61d86f5bdd545aae48f0 *inst/doc/nFactorsExample01.pdf
 d49bfae8f976af7e9b404032cf2c0e36 *man/bentlerParameters.rd
