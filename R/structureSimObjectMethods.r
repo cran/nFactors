@@ -1,9 +1,83 @@
+#' Utility Functions for nScree Class Objects
+#'
+#' Utility functions for \code{structureSim} class objects. Note that with the
+#' \code{plot.structureSim} a dotted black vertical line shows the median
+#' number of factors retained by all the different indices.
+#' @rdname structureSimObjectMethods
+#'
+#' @aliases boxplot.structureSim is.structureSim plot.structureSim
+#' print.structureSim summary.structureSim
+#' @param eigenSelect numeric: vector of the index of the selected eigenvalues
+#' @param index numeric: vector of the index of the selected indices
+#' @param main character: main title
+#' @param nFactors numeric: if known, number of factors
+#' @param object structureSim: an object of the class \code{structureSim}
+#' @param vLine character: color of the vertical indicator line of the initial
+#' number of factors in the eigen boxplot
+#' @param x structureSim: an object of the class \code{structureSim}
+#' @param xlab character: x axis label
+#' @param ylab character: y axis label
+#' @param ...  variable: additionnal parameters to give to the \code{boxplot},
+#' \code{plot}, \code{print} and \code{summary functions.}
+#' @return Generic functions for the \code{structureSim} class:
+#' \item{boxplot.structureSim }{ graphic: plots an eigen boxplot }
+#' \item{is.structureSim}{ logical: is the object of the class
+#' \code{structureSim}? } \item{plot.structureSim }{ graphic: plots an index
+#' acuracy plot} \item{print.structureSim }{ numeric: data.frame of statistics
+#' about the number of components/factors to retain according to different
+#' indices following a \code{structureSim} simulation}
+#' \item{summary.structureSim }{ list: two data.frame, the first with the
+#' details of the simulated eigenvalues, the second with the details of the
+#' simulated indices}
+#' @author Gilles Raiche \cr Centre sur les Applications des Modeles de
+#' Reponses aux Items (CAMRI) \cr Universite du Quebec a Montreal\cr
+#' \email{raiche.gilles@@uqam.ca}
+#' @seealso \code{\link{nFactors-package}}
+#' @references
+#'
+#' Raiche, G., Walls, T. A., Magis, D., Riopel, M. and Blais, J.-G. (2013). Non-graphical solutions
+#' for Cattell's scree test. Methodology, 9(1), 23-29.
+#'
+#' @export
+#' @importFrom stats median
+#' @keywords multivariate
+#' @examples
+#'
+#' \dontrun{
+#' ## INITIALISATION
+#'  library(xtable)
+#'  library(nFactors)
+#'  nFactors  <- 3
+#'  unique    <- 0.2
+#'  loadings  <- 0.5
+#'  nsubjects <- 180
+#'  repsim    <- 10
+#'  var       <- 36
+#'  pmjc      <- 12
+#'  reppar    <- 10
+#'  zwick     <- generateStructure(var=var, mjc=nFactors, pmjc=pmjc,
+#'                                 loadings=loadings,
+#'                                 unique=unique)
+#'
+#' ## SIMULATIONS
+#' mzwick    <-  structureSim(fload=as.matrix(zwick), reppar=reppar,
+#'                            repsim=repsim, details=TRUE,
+#'                            N=nsubjects, quantile=0.5)
+#'
+#' ## TEST OF structureSim METHODS
+#'  is(mzwick)
+#'  summary(mzwick, index=1:5, eigenSelect=1:10, digits=3)
+#'  print(mzwick, index=1:10)
+#'  plot(x=mzwick, index=c(1:10), cex.axis=0.7, col="red")
+#'  boxplot(x=mzwick, nFactors=3, vLine="blue", col="red")
+#'  }
+#'
 ## .................................................................
 summary.structureSim <- function(object, index=c(1:15), eigenSelect=NULL, ...) {
 
  if (!is.structureSim(object)) stop("Not a structureSim object")
  if (is.null(eigenSelect)) eigenSelect <- c(1:dim(object$details$eigenvalues)[2])
- 
+
  cat("Report For a structureSim Class \n\n")
  NextMethod()
  cat(paste("Simulated eigenvalues","\n\n"))
@@ -19,12 +93,14 @@ summary.structureSim <- function(object, index=c(1:15), eigenSelect=NULL, ...) {
  # summary(x)
 ## .................................................................
 
+#' @rdname structureSimObjectMethods
+#' @export
 ## .................................................................
 print.structureSim <- function(x, index=NULL, ...) {
 
  if (!is.structureSim(x)) stop("Not a structureSim object")
  if (is.null(index)) index <- c(1:dim(x$nFactors)[2])
- 
+
  res <- x$nFactors[,index]
  print(res, ...)
  }
@@ -33,11 +109,13 @@ print.structureSim <- function(x, index=NULL, ...) {
  # print(x)
 ## .................................................................
 
+#' @rdname structureSimObjectMethods
+#' @export
 ## .................................................................
 boxplot.structureSim <- function(x, nFactors=NULL, eigenSelect=NULL,
                                  vLine="green", xlab="Factors",
                                  ylab="Eigenvalues", main="Eigen Box Plot", ...) {
-                                 
+
  if (!is.structureSim(x)) stop("Not a structureSim object")
  if (is.null(eigenSelect)) eigenSelect <- c(1:dim(x$details$eigenvalues)[2])
 
@@ -49,6 +127,8 @@ boxplot.structureSim <- function(x, nFactors=NULL, eigenSelect=NULL,
  # boxplot(x)
 ## .................................................................
 
+#' @rdname structureSimObjectMethods
+#' @export
 ## .................................................................
 plot.structureSim <- function(x, nFactors=NULL, index=NULL, main="Index Acuracy Plot", ...) {
 
@@ -72,6 +152,8 @@ plot.structureSim <- function(x, nFactors=NULL, index=NULL, main="Index Acuracy 
  # plot(x)
 ## .................................................................
 
+#' @rdname structureSimObjectMethods
+#' @export
 ## .................................................................
 is.structureSim <- function(object) {
  if (class(object) == "structureSim") return(TRUE) else return(FALSE)
@@ -79,3 +161,4 @@ is.structureSim <- function(object) {
  # is.structureSim(mzwick)
  # is.structureSim(x)
 ## .................................................................
+
