@@ -117,6 +117,6 @@ function(x, ...) {
 ## .................................................................
 is.nScree <-
 function(object) {
- if (class(object) == "nScree") return(TRUE) else return(FALSE)
+ if (inherits(object, "nScree")) return(TRUE) else return(FALSE)
  }
 ## .................................................................

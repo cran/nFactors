@@ -2,7 +2,7 @@ Package: nFactors
 Type: Package
 Title: Parallel Analysis and Other Non Graphical Solutions to the
         Cattell Scree Test
-Version: 2.4.1
+Version: 2.4.1.1
 Date: 2020-03-27
 Author: Gilles Raiche (Universite du Quebec a Montreal) and David Magis (Universite de Liege)
 Maintainer: Gilles Raiche <raiche.gilles@uqam.ca>
@@ -27,6 +27,6 @@ Imports: stats, MASS, psych
 RoxygenNote: 6.1.1
 Suggests: testthat
 NeedsCompilation: no
-Packaged: 2020-03-27 21:00:05 UTC; Gilles
+Packaged: 2022-10-10 11:47:48 UTC; hornik
 Repository: CRAN
-Date/Publication: 2020-03-28 05:50:06 UTC
+Date/Publication: 2022-10-10 12:20:07 UTC

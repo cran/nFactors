@@ -156,7 +156,7 @@ plot.structureSim <- function(x, nFactors=NULL, index=NULL, main="Index Acuracy 
 #' @export
 ## .................................................................
 is.structureSim <- function(object) {
- if (class(object) == "structureSim") return(TRUE) else return(FALSE)
+ if (inherits(object, "structureSim")) return(TRUE) else return(FALSE)
  }
  # is.structureSim(mzwick)
  # is.structureSim(x)

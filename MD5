@@ -1,4 +1,4 @@
-35d5998ae24baecdfc0dd82cc656bcb6 *DESCRIPTION
+ab3ebf81c7b3b9bc3ac894bba99c79f4 *DESCRIPTION
 65a4508d30752594927bde4b80f67147 *NAMESPACE
 d7e767d105de490d3063a8c33d4d26c0 *NEWS
 81051bcc2cf1bedf378224b0a93e2877 *R/aphabetical.R
@@ -21,7 +21,7 @@ d243316a5291bf5e7a2423a774f602ab *R/nFactors.R
 91195761ce8d68f17d4ea3b6b7c6bb6e *R/nFactorsObjectMethods.r
 5d0b042badbe0a2612e62fed25dcc2e0 *R/nMreg.r
 f1f0cf62b3fc57d869a6f691c4a596a5 *R/nScree.R
-72418533c2da75d02b7c340e6cf06e93 *R/nScreeObjectMethods.r
+d5643e4fa6b60b32f7c556f37bc07a3d *R/nScreeObjectMethods.r
 9d57228783175de408cdcfef7a5b16aa *R/nSeScree.r
 7601c416c7124c4492cb67f536b61d1b *R/parallel.R
 02ed9acac358fd6bccfe2c23540f982d *R/plotParallel.R
@@ -31,10 +31,10 @@ a4438c4e4dfa111246cd5d8cdb1b9fa8 *R/principalAxis.r
 8bdf069688cedf2e86120d6740132a59 *R/principalComponents.r
 7464dc674338c9211e096e864d248df2 *R/rRecovery.r
 66c895b316839f641aea24600750500a *R/structureSim.r
-ca335a4f10cb7c3012ef578169cd2b7f *R/structureSimObjectMethods.r
+83709be2fdb9137854c54ebe618fd624 *R/structureSimObjectMethods.r
 ad9e7ab938dd927b8afbf8c328e0ea83 *R/studySim.r
 566eaca37f817829ed73d0675955df39 *TODO
-9c56378595dfdc3e9b3d080efb276f71 *data/dFactors.rda
+bdddb5db1e58c743da382e585c965159 *data/dFactors.rda
 36526c8ed6f66cf0c77f1b8af82b287f *man/bentlerParameters.Rd
 f1e4a8a91b1740ca946932e61a5c6261 *man/componentAxis.Rd
 45459a9c10a1f17e2bddb3a419af6932 *man/corFA.Rd
@@ -48,7 +48,7 @@ c6eb961e377539cb175f711297ab3d29 *man/generateStructure.Rd
 3e388c70e1c5e41682f48f2c0a07b4aa *man/iterativePrincipalAxis.Rd
 52c905148b120feac65c62b21f67e60a *man/makeCor.Rd
 c199fedf6be6626b533e94424e43676b *man/moreStats.Rd
-adc80eed5f88c0f6a82fa77d63a6d873 *man/nBartlett.Rd
+1c91cb82e76bbab260b23b7e29bb163a *man/nBartlett.Rd
 cca33e6c0e433fcdf477cb9e2d4e9c8b *man/nBentler.Rd
 60f8fb9e56e0c6157ccc215b41b45b28 *man/nCng.Rd
 25f934e5a457869d2879f80253e57a86 *man/nFactors.Rd

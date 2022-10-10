@@ -43,11 +43,9 @@ This hypothesis is verified by the application of different version of a
 Each of these tests shares the compution of a \eqn{V_k} value: \cr
 
 (2) \eqn{\qquad \qquad V_k  =
-  \prod\limits_{i = k + 1}^p {\left\{ {{{\lambda _i }
-    \over {{\raise0.7ex\hbox{$1$} \!\mathord{\left/
-    {\vphantom {1 q}}\right.\kern-\nulldelimiterspace}
-      \!\lower0.7ex\hbox{$q$}}\sum\limits_{i = k + 1}^p {\lambda _i } }}} \right\}}
-}
+  \prod\limits_{i = k + 1}^p
+  \left\{ \frac{\displaystyle \lambda_i}{\frac{1}{q}\sum\limits_{i = k + 1}^p {\lambda
+  _i } } \right\} }
 
 \eqn{p} is the number of eigenvalues, \eqn{k} the number of eigenvalues to test,
 and \eqn{q} the \eqn{p-k} remaining eigenvalues. \eqn{n} is equal to the sample size
