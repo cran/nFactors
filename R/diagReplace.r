@@ -14,7 +14,8 @@
 #' @keywords manip
 #' @export
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' # .......................................................
 #' # Example from Kim and Mueller (1978, p. 10)
 #' # Population: upper diagonal
@@ -33,7 +34,8 @@
 #' # Replace lower diagonal with upper diagonal
 #'  RL <- diagReplace(R, upper=FALSE)
 #' # .......................................................
-#'
+#'  }
+#' }
 
 diagReplace <- function(R, upper=TRUE) {
  RT <- R

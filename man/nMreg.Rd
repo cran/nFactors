@@ -40,7 +40,8 @@ hypothesis is considered: \cr
 (\lambda_{k+1} \ldots \lambda_p), (k = 3, \ldots, p-3) = 0} \cr
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 ## SIMPLE EXAMPLE OF A MREG ANALYSIS
 
  data(dFactors)
@@ -54,7 +55,8 @@ hypothesis is considered: \cr
                             results$nFactors[3],
                             " factors retained by the MREG procedures",
                             sep=""))
-
+ }
+}
 }
 \references{
 Zoski, K. and Jurs, S. (1993). Using multiple regression to

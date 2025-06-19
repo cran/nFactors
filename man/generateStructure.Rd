@@ -27,6 +27,8 @@ The argument \emph{pmjc} must be divisible by \emph{nVar}.
 The arguments are strongly inspired from Zick and Velicer (1986, p. 435-436) methodology.
 }
 \examples{
+\dontrun{
+if(interactive()){
 # .......................................................
 # Example inspired from Zwick and Velicer (1986, table 2, p. 437)
 ## ...................................................................
@@ -92,7 +94,8 @@ results.fa$Components
 plotnScree(results.fa)
 # ......................................................
 
-
+ }
+}
 }
 \references{
 Raiche, G., Walls, T. A., Magis, D., Riopel, M. and Blais, J.-G. (2013). Non-graphical solutions

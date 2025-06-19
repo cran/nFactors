@@ -23,6 +23,8 @@ was proposed in order to apply some functions globally on a \code{data.frame}:
 version cannot do so.
 }
 \examples{
+\dontrun{
+if(interactive()){
 ## ................................................
 ## GENERATION OF A MATRIX OF 100 OBSERVATIONS AND 10 VARIABLES
 x   <- matrix(rnorm(1000),ncol=10)
@@ -30,7 +32,8 @@ x   <- matrix(rnorm(1000),ncol=10)
 ## STATISTICS
 res <- moreStats(x, quantile=0.05, show=TRUE)
 res
-
+ }
+}
 }
 \seealso{
 \code{\link{plotuScree}}, \code{\link{nScree}}, \code{\link{plotnScree}}, \code{\link{plotParallel}}

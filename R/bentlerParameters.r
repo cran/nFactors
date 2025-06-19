@@ -93,15 +93,16 @@
 #'
 #' Bentler, P. M. and Yuan, K.-H. (1998). Test of linear trend in the smallest
 #' eigenvalues of the correlation matrix. \emph{Psychometrika, 63}(2), 131-144.
-# #' @importFrom lattice wireframe contourplot levelplot
+#' @importFrom lattice wireframe contourplot levelplot
 #' @importFrom stats nlminb lm pchisq
-#' @importFrom graphics abline
-#' @import lattice
 #' @export
 #' @keywords multivariate
 #' @examples
+#' \dontrun{
+#' if(interactive()){
 #' ## ................................................
 #' ## SIMPLE EXAMPLE OF THE BENTLER AND YUAN PROCEDURE
+#' ## #' @importFrom graphics abline
 #'
 #' # Bentler (1996, p. 309) Table 2 - Example 2 .............
 #' n=649
@@ -151,10 +152,13 @@
 #'    " factors retained by the Bentler and Yuan's procedure (1998, p. 140)",
 #'    sep=""))
 #' # ........................................................
+#'  }
+#' }
+#'
 bentlerParameters <-
 function(x, N, nFactors, log=TRUE, cor=TRUE,
          minPar=c(min(lambda) - abs(min(lambda)) +.001, 0.001),
-         maxPar=c(max(lambda), lm(lambda ~ I(length(lambda):1))$coef[2]),
+         maxPar=c(max(lambda), stats::lm(lambda ~ I(length(lambda):1))$coef[2]),
          resParx=c(0.01, 2), resPary=c(0.01, 2),
          graphic=TRUE, resolution=30, typePlot="wireframe", ...){
  stopMessage  <- paste("\n These indices are only valid with a principal component solution.\n",
@@ -186,12 +190,12 @@ function(x, N, nFactors, log=TRUE, cor=TRUE,
   for( i in 1:length(data$Alpha)) data$y[i] <- F(c(data$Alpha[i],data$Beta[i]))
 
   if (log == FALSE) zlab <- "y" else zlab <- "log(y)"
-  if (typePlot == "wireframe")   figure    <- wireframe(  y ~ Alpha * Beta, data=data, zlab=zlab, ...)
-  if (typePlot == "contourplot") figure    <- contourplot(y ~ Alpha * Beta, data=data, region=TRUE, ...)
-  if (typePlot == "levelplot")   figure    <- levelplot(  y ~ Alpha * Beta, data=data, region=TRUE, ...)
+  if (typePlot == "wireframe")   figure    <- lattice::wireframe(  y ~ Alpha * Beta, data=data, zlab=zlab, ...)
+  if (typePlot == "contourplot") figure    <- lattice::contourplot(y ~ Alpha * Beta, data=data, region=TRUE, ...)
+  if (typePlot == "levelplot")   figure    <- lattice::levelplot(  y ~ Alpha * Beta, data=data, region=TRUE, ...)
   }
 
- res   <- nlminb(objective=F,start=lm(l~x)$coefficients,lower=c(minPar[1],minPar[2]),upper=c(maxPar[1],maxPar[2]))
+ res   <- stats::nlminb(objective=F,start=stats::lm(l~x)$coefficients,lower=c(minPar[1],minPar[2]),upper=c(maxPar[1],maxPar[2]))
  para  <- res$par[1]
  parb  <- res$par[2]
  # Bentler (1996, p. 133) equation 7
@@ -200,7 +204,7 @@ function(x, N, nFactors, log=TRUE, cor=TRUE,
  lrt   <- N*(k-p)*(log(n/N)+1)-N*sum(log(lambda[(k+1):p]/(para+parb*x))) + n*sum(lambda[(k+1):p]/(para+parb*x))
  df    <- q-2
  resp  <- list(convergence=res$convergence, figure=figure, coefficients=res$par,
-              lrt=lrt, df=df,k=k,p.value=1-pchisq(lrt,df))
+              lrt=lrt, df=df,k=k,p.value=1-stats::pchisq(lrt,df))
  names(resp$coefficients)<-c("alpha","beta")
  return(resp)
  }

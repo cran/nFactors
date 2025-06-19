@@ -17,6 +17,8 @@ This function creates a full correlation/covariance matrix from a matrix with
 lower part filled and upper part with zeros.
 }
 \examples{
+\dontrun{
+if(interactive()){
 ## ................................................
 ## LOWER CORRELATION MATRIX WITH ZEROS ON UPPER PART
 ## From Gorsuch (table 1.3.1)
@@ -35,6 +37,8 @@ gorsuch <- c(
 ## UPPER CORRELATION MATRIX FILLED WITH UPPER CORRELATION MATRIX
 gorsuch <- makeCor(gorsuch)
 gorsuch
+ }
+}
 }
 \seealso{
 \code{\link{plotuScree}}, \code{\link{nScree}}, \code{\link{plotnScree}}, \code{\link{plotParallel}}

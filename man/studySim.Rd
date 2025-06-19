@@ -4,9 +4,23 @@
 \alias{studySim}
 \title{Simulation Study from Given Factor Structure Matrices and Conditions}
 \usage{
-studySim(var, nFactors, pmjc, loadings, unique, N, repsim, reppar,
-  stats = 1, quantile = 0.5, model = "components", r2limen = 0.75,
-  all = FALSE, dir = NA, trace = TRUE)
+studySim(
+  var,
+  nFactors,
+  pmjc,
+  loadings,
+  unique,
+  N,
+  repsim,
+  reppar,
+  stats = 1,
+  quantile = 0.5,
+  model = "components",
+  r2limen = 0.75,
+  all = FALSE,
+  dir = NA,
+  trace = TRUE
+)
 }
 \arguments{
 \item{var}{numeric: vector of the number of variables}

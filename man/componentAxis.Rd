@@ -23,7 +23,8 @@ The \code{componentAxis} function returns a principal component analysis
 with the first \emph{n} components retained.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 # .......................................................
 # Example from Kim and Mueller (1978, p. 10)
 # Simulated sample: lower diagnonal
@@ -40,6 +41,8 @@ with the first \emph{n} components retained.
  componentAxis(R, nFactors=2)
 
 # .......................................................
+ }
+}
 }
 \references{
 Kim, J.-O. and Mueller, C. W. (1978). \emph{Introduction to

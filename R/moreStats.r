@@ -20,6 +20,8 @@
 #' @importFrom stats sd median
 #' @keywords multivariate
 #' @examples
+#' \dontrun{
+#' if(interactive()){
 #' ## ................................................
 #' ## GENERATION OF A MATRIX OF 100 OBSERVATIONS AND 10 VARIABLES
 #' x   <- matrix(rnorm(1000),ncol=10)
@@ -27,18 +29,19 @@
 #' ## STATISTICS
 #' res <- moreStats(x, quantile=0.05, show=TRUE)
 #' res
-#'
+#'  }
+#' }
 moreStats <-
 function(x, quantile=0.95, show=FALSE) {
  cent  <- quantile    # The old parameter was labeled cent
  x     <- data.frame(x)
  xMean <- sapply(x, mean) # mean(x)
- xSd   <- sapply(x, sd)   # sd(x)
+ xSd   <- sapply(x, stats::sd)   # sd(x)
  xMin  <- xMax <- xMedian <- xQuantile <- numeric(ncol(x))
  for (i in 1:ncol(x)) {
   xMin[i]    <- min(x[,i])
   xMax[i]    <- max(x[,i])
-  xMedian[i] <- median(x[,i])
+  xMedian[i] <- stats::median(x[,i])
   xQuantile[i]  <- quantile(x[,i],probs=cent,names=FALSE, na.rm=TRUE) # quantile(rnorm(1000),probs=cent)
   }
  names       <- colnames(x)

@@ -4,21 +4,23 @@
 \name{dFactors}
 \alias{dFactors}
 \title{Eigenvalues from classical studies}
-\format{A list of examples. For each example, a list is also used to give the eigenvalues
+\format{
+A list of examples. For each example, a list is also used to give the eigenvalues
 vector and the number of subjects.
 \describe{
-  \item{Bentler}{$eigenvalues and $nsubjects}
-  \item{Buja}{$eigenvalues and $nsubjects}
-  \item{Cliff1}{$eigenvalues and $nsubjects}
-  \item{Cliff2}{$eigenvalues and $nsubjects}
-  \item{Cliff3}{$eigenvalues and $nsubjects}
-  \item{Hand}{$eigenvalues and $nsubjects}
-  \item{Harman}{$eigenvalues and $nsubjects}
-  \item{Lawley}{$eigenvalues and $nsubjects}
-  \item{Raiche}{$eigenvalues and $nsubjects}
-  \item{Tucker1}{$eigenvalues and $nsubjects}
-  \item{Tucker2}{$eigenvalues and $nsubjects}
-}}
+\item{Bentler}{$eigenvalues and $nsubjects}
+\item{Buja}{$eigenvalues and $nsubjects}
+\item{Cliff1}{$eigenvalues and $nsubjects}
+\item{Cliff2}{$eigenvalues and $nsubjects}
+\item{Cliff3}{$eigenvalues and $nsubjects}
+\item{Hand}{$eigenvalues and $nsubjects}
+\item{Harman}{$eigenvalues and $nsubjects}
+\item{Lawley}{$eigenvalues and $nsubjects}
+\item{Raiche}{$eigenvalues and $nsubjects}
+\item{Tucker1}{$eigenvalues and $nsubjects}
+\item{Tucker2}{$eigenvalues and $nsubjects}
+}
+}
 \source{
 Lawley and Hand dataset:  Bartholomew \emph{et al}. (2002, p. 123, 126)
 
@@ -39,15 +41,16 @@ dFactors
 }
 \description{
 Classical examples of eigenvalues vectors used to study the number of factors
- to retain in the litterature. These examples generally give the number of
- subjects use to obtain these eigenvalues.
- The number of subjects is used with the parallel analysis.
+to retain in the litterature. These examples generally give the number of
+subjects use to obtain these eigenvalues.
+The number of subjects is used with the parallel analysis.
 }
 \details{
 Other datasets will be added in future versions of the package.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 # EXAMPLES FROM DATASET
  data(dFactors)
 
@@ -59,7 +62,8 @@ Other datasets will be added in future versions of the package.
 
 # SCREE PLOT OF THE Cliff1 DATASET
  plotuScree(dFactors$Cliff1$eigenvalues)
-
+ }
+}
 }
 \references{
 Bartholomew, D. J., Steele, F., Moustaki, I. and Galbraith, J.

@@ -5,8 +5,14 @@
 \title{Standard Error Scree and Coefficient of Determination Procedures to
 Determine the Number of Components/Factors}
 \usage{
-nSeScree(x, cor = TRUE, model = "components", details = TRUE,
-  r2limen = 0.75, ...)
+nSeScree(
+  x,
+  cor = TRUE,
+  model = "components",
+  details = TRUE,
+  r2limen = 0.75,
+  ...
+)
 }
 \arguments{
 \item{x}{numeric: eigenvalues.}
@@ -56,7 +62,8 @@ suggested that a value of 0.75 or more must be considered. More is to be
 done to explore adequate values.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 ## SIMPLE EXAMPLE OF SESCREE AND R2 ANALYSIS
 
  data(dFactors)
@@ -68,7 +75,8 @@ done to explore adequate values.
  plotuScree(eig, main=paste(results$nFactors[1], " or ", results$nFactors[2],
                             " factors retained by the sescree and R2 procedures",
                             sep=""))
-
+ }
+}
 }
 \references{
 Nasser, F. (2002). The performance of regression-based

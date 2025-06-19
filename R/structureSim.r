@@ -42,8 +42,8 @@
 #' @importFrom psych sim.structure
 #' @keywords multivariate
 #' @examples
-#'
 #' \dontrun{
+#' if(interactive()){
 #' # .......................................................
 #' # Example inspired from Zwick and Velicer (1986, table 2, p. 437)
 #' ## ...................................................................
@@ -72,23 +72,23 @@
 #' #                            repsim=repsim, N=nsubjects, quantile=0.5, all=TRUE)
 #'
 #'  par(mfrow=c(2,1))
-#'  plot(x=mzwick,    nFactors=nFactors, index=c(1:14), cex.axis=0.7, col="red")
-#'  plot(x=mzwick.fa, nFactors=nFactors, index=c(1:11), cex.axis=0.7, col="red")
+#'  graphics::plot(x=mzwick,    nFactors=nFactors, index=c(1:14), cex.axis=0.7, col="red")
+#'  graphics::plot(x=mzwick.fa, nFactors=nFactors, index=c(1:11), cex.axis=0.7, col="red")
 #'  par(mfrow=c(1,1))
 #'
 #'  par(mfrow=c(2,1))
-#'  boxplot(x=mzwick,    nFactors=3, cex.axis=0.8, vLine="blue", col="red")
-#'  boxplot(x=mzwick.fa, nFactors=3, cex.axis=0.8, vLine="blue", col="red",
+#'  graphics::boxplot(x=mzwick,    nFactors=3, cex.axis=0.8, vLine="blue", col="red")
+#'  graphics::boxplot(x=mzwick.fa, nFactors=3, cex.axis=0.8, vLine="blue", col="red",
 #'          xlab="Components")
 #'  par(mfrow=c(1,1))
 #' # ......................................................
 #'  }
-#'
+#' }
 structureSim <-
 function(fload, reppar=30, repsim=100, N, quantile=0.95, model="components",
          adequacy=FALSE, details=TRUE, r2limen=0.75, all=FALSE) {
- simulation   <- sim.structure(fx=fload, n=N, raw=TRUE)
- if (adequacy == TRUE) print(factanal(covmat=simulation$model, factors=dim(fload)[2])) # Verification of the adequacy of the model
+ simulation   <- psych::sim.structure(fx=fload, n=N, raw=TRUE)
+ if (adequacy == TRUE) print(stats::factanal(covmat=simulation$model, factors=dim(fload)[2])) # Verification of the adequacy of the model
  eigenvalues  <- eigenComputes(simulation$r, cor=TRUE, model=model)
  variables    <- length(eigenvalues) # Compute the number of variables
  aparallel    <- parallel(var=dim(fload)[1],subject=N,rep=reppar,cent=quantile,model=model)$eigen$qevpea  # The percentile
@@ -96,7 +96,7 @@ function(fload, reppar=30, repsim=100, N, quantile=0.95, model="components",
  analysis     <- NA
  values       <- matrix(NA, ncol=length(eigenvalues),nrow=repsim)
  for (i in 1:repsim) {
-  simulation             <- sim.structure(fx=fload, n=N, raw=TRUE)
+  simulation             <- psych::sim.structure(fx=fload, n=N, raw=TRUE)
   aparallel              <- parallel(var=dim(fload)[1],subject=N,rep=reppar,cent=quantile,model=model)$eigen$qevpea
   eigenvalues            <- eigenComputes(simulation$r, cor=TRUE, model=model)
   values[i,]             <- eigenvalues

@@ -2,8 +2,8 @@
 % Please edit documentation in R/nFactors.R
 \docType{package}
 \name{nFactors}
-\alias{nFactors}
 \alias{nFactors-package}
+\alias{nFactors}
 \title{nFactors: Number of factor or components to retain in a factor analysis}
 \description{
 A package for determining the number of factor or components to retain in a factor analysis.

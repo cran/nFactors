@@ -24,7 +24,8 @@
 #' @keywords multivariate
 #' @export
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' # .......................................................
 #' # Example from Kim and Mueller (1978, p. 10)
 #' # Simulated sample: lower diagnonal
@@ -41,6 +42,8 @@
 #'  componentAxis(R, nFactors=2)
 #'
 #' # .......................................................
+#'  }
+#' }
 "componentAxis" <-
 function(R, nFactors=2) {
   nVar            <- dim(R)[2]

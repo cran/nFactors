@@ -11,6 +11,8 @@
 #' @export
 #' @keywords multivariate
 #' @examples
+#' \dontrun{
+#' if(interactive()){
 #' ## ................................................
 #'## LOWER CORRELATION MATRIX WITH ZEROS ON UPPER PART
 #'## From Gorsuch (table 1.3.1)
@@ -29,6 +31,8 @@
 #'## UPPER CORRELATION MATRIX FILLED WITH UPPER CORRELATION MATRIX
 #'gorsuch <- makeCor(gorsuch)
 #'gorsuch
+#'  }
+#' }
 makeCor <-
 function(x) {
  if (is.matrix(x)) stop("x is not a vector.")

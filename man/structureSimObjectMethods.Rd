@@ -8,17 +8,22 @@
 \alias{print.structureSim}
 \title{Utility Functions for nScree Class Objects}
 \usage{
-\method{summary}{structureSim}(object, index = c(1:15),
-  eigenSelect = NULL, ...)
+\method{summary}{structureSim}(object, index = c(1:15), eigenSelect = NULL, ...)
 
 \method{print}{structureSim}(x, index = NULL, ...)
 
-\method{boxplot}{structureSim}(x, nFactors = NULL, eigenSelect = NULL,
-  vLine = "green", xlab = "Factors", ylab = "Eigenvalues",
-  main = "Eigen Box Plot", ...)
+\method{boxplot}{structureSim}(
+  x,
+  nFactors = NULL,
+  eigenSelect = NULL,
+  vLine = "green",
+  xlab = "Factors",
+  ylab = "Eigenvalues",
+  main = "Eigen Box Plot",
+  ...
+)
 
-\method{plot}{structureSim}(x, nFactors = NULL, index = NULL,
-  main = "Index Acuracy Plot", ...)
+\method{plot}{structureSim}(x, nFactors = NULL, index = NULL, main = "Index Acuracy Plot", ...)
 
 is.structureSim(object)
 }
@@ -65,6 +70,7 @@ number of factors retained by all the different indices.
 \examples{
 
 \dontrun{
+if(interactive()){
 ## INITIALISATION
  library(xtable)
  library(nFactors)
@@ -90,7 +96,8 @@ mzwick    <-  structureSim(fload=as.matrix(zwick), reppar=reppar,
  summary(mzwick, index=1:5, eigenSelect=1:10, digits=3)
  print(mzwick, index=1:10)
  plot(x=mzwick, index=c(1:10), cex.axis=0.7, col="red")
- boxplot(x=mzwick, nFactors=3, vLine="blue", col="red")
+ graphics::boxplot(x=mzwick, nFactors=3, vLine="blue", col="red")
+  }
  }
 
 }

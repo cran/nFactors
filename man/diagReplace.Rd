@@ -21,7 +21,8 @@ matrix by replacing upper diagonal with lower diagonal, or lower diagonal
 with upper diagonal.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 # .......................................................
 # Example from Kim and Mueller (1978, p. 10)
 # Population: upper diagonal
@@ -40,7 +41,8 @@ with upper diagonal.
 # Replace lower diagonal with upper diagonal
  RL <- diagReplace(R, upper=FALSE)
 # .......................................................
-
+ }
+}
 }
 \author{
 Gilles Raiche \cr Centre sur les Applications des Modeles de

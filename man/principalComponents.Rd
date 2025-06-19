@@ -25,7 +25,8 @@ retain only a small number of components the \code{componentAxis} function
 has to be used.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 # .......................................................
 # Example from Kim and Mueller (1978, p. 10)
 # Population: upper diagonal
@@ -48,7 +49,8 @@ has to be used.
  RL <- diagReplace(R, upper=FALSE)
  principalComponents(RL)
 # .......................................................
-
+ }
+}
 }
 \references{
 Joliffe, I. T. (2002). \emph{Principal components analysis} (2th

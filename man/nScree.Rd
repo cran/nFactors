@@ -4,8 +4,15 @@
 \alias{nScree}
 \title{Non Graphical Cattel's Scree Test}
 \usage{
-nScree(eig = NULL, x = eig, aparallel = NULL, cor = TRUE,
-  model = "components", criteria = NULL, ...)
+nScree(
+  eig = NULL,
+  x = eig,
+  aparallel = NULL,
+  cor = TRUE,
+  model = "components",
+  criteria = NULL,
+  ...
+)
 }
 \arguments{
 \item{eig}{depreciated parameter (use x instead): eigenvalues to analyse}
@@ -99,7 +106,8 @@ coordinates and the last eigenvalue coordinates: \deqn{n_{OC} = \sum_i
 \right].}
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 ## INITIALISATION
  data(dFactors)                      # Load the nFactors dataset
  attach(dFactors)
@@ -125,7 +133,8 @@ coordinates and the last eigenvalue coordinates: \deqn{n_{OC} = \sum_i
 
 ## PLOT ACCORDING TO THE nScree CLASS
  plotnScree(results)
-
+ }
+}
 }
 \references{
 Cattell, R. B. (1966). The scree test for the number of factors.

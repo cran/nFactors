@@ -19,9 +19,11 @@
 #' \cr \cr David Magis \cr Departement de mathematiques \cr Universite de Liege
 #' \cr \email{David.Magis@@ulg.ac.be}
 #' @export
-#' @importFrom stats cov cov2cor
+#' @importFrom stats cor cov cov2cor
 #' @keywords multivariate
 #' @examples
+#' \dontrun{
+#' if(interactive()){
 #' # .......................................................
 #' # Different data types
 #' # Vector of eigenvalues
@@ -45,7 +47,8 @@
 #' x4 <- cor(x2)
 #' eigenComputes(x4, use="everything")
 #' # .......................................................
-#'
+#'  }
+#' }
 eigenComputes <-
 function(x, cor=TRUE, model="components", ...) {
  dataType <- eigenFrom(x)
@@ -53,16 +56,16 @@ function(x, cor=TRUE, model="components", ...) {
  if (model == "components") {
   res <- switch(dataType,
    eigenvalues = as.vector(x),
-   correlation = {if (cor == FALSE) eigen(x)$values           else  eigen(cov2cor(x))$values},
-   data        = {if (cor == TRUE)  eigen(cor(x, ...))$values else  eigen(cov(x, ...))$values}
+   correlation = {if (cor == FALSE) eigen(x)$values           else  eigen(stats::cov2cor(x))$values},
+   data        = {if (cor == TRUE)  eigen(stats::cor(x, ...))$values else  eigen(stats::cov(x, ...))$values}
    )
   }
 
  if (model == "factors") {
   res <- switch(dataType,
    eigenvalues = as.vector(x),
-   correlation = {if (cor == FALSE) eigen(corFA(x, method="ginv"))$values else   eigen(cov2cor(corFA(x, method="ginv")))$values},
-   data        = {if (cor == TRUE)  eigen(corFA(cor(x, ...), method="ginv"))$values else  eigen(corFA(cov(x, ...), method="ginv"))$values}
+   correlation = {if (cor == FALSE) eigen(corFA(x, method="ginv"))$values else   eigen(stats::cov2cor(corFA(x, method="ginv")))$values},
+   data        = {if (cor == TRUE)  eigen(corFA(stats::cor(x, ...), method="ginv"))$values else  eigen(corFA(stats::cov(x, ...), method="ginv"))$values}
    )
   }
  return(res)

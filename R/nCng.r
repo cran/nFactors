@@ -43,10 +43,11 @@
 #' number of factors to retain in factor analysis. \emph{Multiple Linear
 #' Regression Viewpoints, 20}(1), 5-9.
 #' @export
-# #' @importFrom stats lm
+#' @importFrom stats lm
 #' @keywords multivariate
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' ## SIMPLE EXAMPLE OF A CNG ANALYSIS
 #'
 #'  data(dFactors)
@@ -58,7 +59,8 @@
 #'  plotuScree(eig, main=paste(results$nFactors,
 #'                             " factors retained by the CNG procedure",
 #'                             sep=""))
-#'
+#'  }
+#' }
 nCng <-
 function(x, cor=TRUE, model="components", details=TRUE, ...) {
  x       <- eigenComputes(x, cor=cor, model=model, ...)
@@ -71,10 +73,10 @@ function(x, cor=TRUE, model="components", details=TRUE, ...) {
  while ((i+2*nlength+1) <= n) {
   xa     <- c(i:(i+nlength))
   ya     <- x[i:(i+nlength)]
-  compa  <- lm(ya ~ xa)$coef[2]
+  compa  <- stats::lm(ya ~ xa)$coef[2]
   xb     <- c((i+1+nlength):(i+2*nlength+1))
   yb     <- x[(i+1+nlength):(i+1+2*nlength)]
-  compb  <- lm(yb ~ xb)$coef[2]
+  compb  <- stats::lm(yb ~ xb)$coef[2]
   cng[i] <-  compb - compa
   i      <- i + 1
   }

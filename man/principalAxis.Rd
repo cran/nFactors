@@ -34,7 +34,8 @@ the estimated communalities based on the sum of loading are used instead,
 then a solution can be computed.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 # .......................................................
 # Example from Kim and Mueller (1978, p. 10)
 # Population: upper diagonal
@@ -61,7 +62,8 @@ then a solution can be computed.
  principalAxis(RL, nFactors=2, communalities="maxr")
  principalAxis(RL, nFactors=2, communalities="multiple")
 # .......................................................
-
+ }
+}
 }
 \references{
 Kim, J.-O. and Mueller, C. W. (1978). \emph{Introduction to

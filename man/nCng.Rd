@@ -43,7 +43,8 @@ slopes occurs is the indicator of the number of components/factors to
 retain.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 ## SIMPLE EXAMPLE OF A CNG ANALYSIS
 
  data(dFactors)
@@ -55,7 +56,8 @@ retain.
  plotuScree(eig, main=paste(results$nFactors,
                             " factors retained by the CNG procedure",
                             sep=""))
-
+ }
+}
 }
 \references{
 Gorsuch, R. L. and Nelson, J. (1981). \emph{CNG scree test: an

@@ -29,7 +29,8 @@
 #' @importFrom stats cor
 #' @keywords utilities
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' # .......................................................
 #' # Example from Kim and Mueller (1978, p. 10)
 #' # Population: upper diagonal
@@ -63,13 +64,14 @@
 #'          rMultiple  = rMultiple), 3)
 #' # .......................................................
 #'
-#'
+#'  }
+#' }
 "rRecovery" <-
 function(R, loadings, diagCommunalities=FALSE) {
  recoveredR <- loadings %*% t(loadings)
  recovery   <- list(R = R, recoveredR = recoveredR, difference = R - recoveredR)
  if (diagCommunalities == FALSE) {diag(R)    <- NA; diag(recoveredR) <- NA }
- corr       <- cor(c(R),c(recoveredR), use="pairwise.complete.obs")
+ corr       <- stats::cor(c(R),c(recoveredR), use="pairwise.complete.obs")
  recovery   <- list(recovery, cor = corr)
  return(recovery)
  }

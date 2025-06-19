@@ -5,9 +5,18 @@
 \title{Population or Simulated Sample Correlation Matrix from a Given Factor
 Structure Matrix}
 \usage{
-structureSim(fload, reppar = 30, repsim = 100, N, quantile = 0.95,
-  model = "components", adequacy = FALSE, details = TRUE,
-  r2limen = 0.75, all = FALSE)
+structureSim(
+  fload,
+  reppar = 30,
+  repsim = 100,
+  N,
+  quantile = 0.95,
+  model = "components",
+  adequacy = FALSE,
+  details = TRUE,
+  r2limen = 0.75,
+  all = FALSE
+)
 }
 \arguments{
 \item{fload}{matrix: loadings of the factor structure}
@@ -46,8 +55,8 @@ The \code{structureSim} function returns a population and a sample
 correlation matrices from a predefined congeneric factor structure.
 }
 \examples{
-
 \dontrun{
+if(interactive()){
 # .......................................................
 # Example inspired from Zwick and Velicer (1986, table 2, p. 437)
 ## ...................................................................
@@ -76,18 +85,18 @@ correlation matrices from a predefined congeneric factor structure.
 #                            repsim=repsim, N=nsubjects, quantile=0.5, all=TRUE)
 
  par(mfrow=c(2,1))
- plot(x=mzwick,    nFactors=nFactors, index=c(1:14), cex.axis=0.7, col="red")
- plot(x=mzwick.fa, nFactors=nFactors, index=c(1:11), cex.axis=0.7, col="red")
+ graphics::plot(x=mzwick,    nFactors=nFactors, index=c(1:14), cex.axis=0.7, col="red")
+ graphics::plot(x=mzwick.fa, nFactors=nFactors, index=c(1:11), cex.axis=0.7, col="red")
  par(mfrow=c(1,1))
 
  par(mfrow=c(2,1))
- boxplot(x=mzwick,    nFactors=3, cex.axis=0.8, vLine="blue", col="red")
- boxplot(x=mzwick.fa, nFactors=3, cex.axis=0.8, vLine="blue", col="red",
+ graphics::boxplot(x=mzwick,    nFactors=3, cex.axis=0.8, vLine="blue", col="red")
+ graphics::boxplot(x=mzwick.fa, nFactors=3, cex.axis=0.8, vLine="blue", col="red",
          xlab="Components")
  par(mfrow=c(1,1))
 # ......................................................
  }
-
+}
 }
 \references{
 Raiche, G., Walls, T. A., Magis, D., Riopel, M. and Blais, J.-G. (2013). Non-graphical solutions

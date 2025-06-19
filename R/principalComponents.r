@@ -30,7 +30,8 @@
 #' @export
 #' @keywords multivariate
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' # .......................................................
 #' # Example from Kim and Mueller (1978, p. 10)
 #' # Population: upper diagonal
@@ -53,7 +54,8 @@
 #'  RL <- diagReplace(R, upper=FALSE)
 #'  principalComponents(RL)
 #' # .......................................................
-#'
+#'  }
+#' }
 "principalComponents" <-
 function(R) {
  nVar   <- dim(R)[2]

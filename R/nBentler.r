@@ -78,10 +78,11 @@
 #' Bentler, P. M. and Yuan, K.-H. (1998). Test of linear trend in the smallest
 #' eigenvalues of the correlation matrix. \emph{Psychometrika, 63}(2), 131-144.
 #' @export
-# #' @importFrom stats lm
+#' @importFrom stats lm
 #' @keywords multivariate
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' ## ................................................
 #' ## SIMPLE EXAMPLE OF THE BENTLER AND YUAN PROCEDURE
 #'
@@ -114,12 +115,12 @@
 #'    " factors retained by the Bentler and Yuan's procedure (1998, p. 140)",
 #'    sep=""))
 #' # ........................................................
-#'
-
+#'  }
+#' }
 nBentler <-
 function(x, N, log=TRUE, alpha=0.05, cor=TRUE, details=TRUE,
          minPar=c(min(lambda) - abs(min(lambda)) +.001, 0.001),
-         maxPar=c(max(lambda), lm(lambda ~ I(length(lambda):1))$coef[2]),
+         maxPar=c(max(lambda), stats::lm(lambda ~ I(length(lambda):1))$coef[2]),
          ...) {
  stopMessage  <- paste("\n These indices are only valid with a principal component solution.\n",
                        " ...................... So, only positive eugenvalues are permitted.\n",

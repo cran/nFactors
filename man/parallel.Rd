@@ -4,8 +4,16 @@
 \alias{parallel}
 \title{Parallel Analysis of a Correlation or Covariance Matrix}
 \usage{
-parallel(subject = 100, var = 10, rep = 100, cent = 0.05,
-  quantile = cent, model = "components", sd = diag(1, var), ...)
+parallel(
+  subject = 100,
+  var = 10,
+  rep = 100,
+  cent = 0.05,
+  quantile = cent,
+  model = "components",
+  sd = diag(1, var),
+  ...
+)
 }
 \arguments{
 \item{subject}{numeric: nmber of subjects (default is 100)}
@@ -51,7 +59,8 @@ fact, the smaller the quantile (\code{cent}), the bigger the number of
 necessary replications.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 ## SIMPLE EXAMPLE OF A PARALLEL ANALYSIS
 ## OF A CORRELATION MATRIX WITH ITS PLOT
  data(dFactors)
@@ -79,7 +88,8 @@ necessary replications.
 
 ## ANOTHER SOLUTION IS SIMPLY TO
  plotParallel(results)
-
+ }
+}
 }
 \references{
 Drasgow, F. and Lissak, R. (1983) Modified parallel analysis: a

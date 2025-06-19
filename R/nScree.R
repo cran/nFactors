@@ -62,9 +62,9 @@
 #' the criteria to \eqn{0}.
 #' @param ...  variabe: additionnal parameters to give to the \code{cor} or
 #' \code{cov} functions
-#' 
-#' 
-#' @return 
+#'
+#'
+#' @return
 #' \item{Components }{ Data frame for the number of components/factors
 #' according to different rules } \item{Components$noc }{ Number of
 #' components/factors to retain according to optimal coordinates \emph{oc}}
@@ -83,15 +83,15 @@
 #' \item{Analysis$Acc.factor }{ Acceleration factor \emph{af}}
 #' \item{Analysis$AF}{ Critical acceleration factor \emph{af}} Otherwise,
 #' returns a summary of the analysis.
-#' 
+#'
 #' @author Gilles Raiche \cr Centre sur les Applications des Modeles de
 #' Reponses aux Items (CAMRI) \cr Universite du Quebec a Montreal\cr
 #' \email{raiche.gilles@@uqam.ca}
-#' 
+#'
 #' @seealso \code{\link{plotuScree}}, \code{\link{plotnScree}},
 #' \code{\link{parallel}}, \code{\link{plotParallel}},
-#' 
-#' @references 
+#'
+#' @references
 #' Cattell, R. B. (1966). The scree test for the number of factors.
 #' \emph{Multivariate Behavioral Research, 1}, 245-276.
 #'
@@ -116,7 +116,8 @@
 #' @importFrom stats lm coef
 #' @keywords multivariate
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' ## INITIALISATION
 #'  data(dFactors)                      # Load the nFactors dataset
 #'  attach(dFactors)
@@ -142,7 +143,8 @@
 #'
 #' ## PLOT ACCORDING TO THE nScree CLASS
 #'  plotnScree(results)
-#'
+#'  }
+#' }
 "nScree" <-
 function(eig=NULL, x=eig, aparallel = NULL, cor=TRUE, model="components", criteria=NULL, ...) {
  # Initialisation
@@ -160,8 +162,8 @@ function(eig=NULL, x=eig, aparallel = NULL, cor=TRUE, model="components", criter
   i           <- i + 1
   ind         <- k[c(i+1,nk)]
   #### Optimal coordinate based on the next eigenvalue regression (scree)
-  vp.p        <- lm(eig[c(i+1,nk)] ~ ind)
-  vp.prec     <- pred.eig[i] <- sum(c(1,i)* coef(vp.p))
+  vp.p        <- stats::lm(eig[c(i+1,nk)] ~ ind)
+  vp.prec     <- pred.eig[i] <- sum(c(1,i)* stats::coef(vp.p))
   cond1       <- (eig[i] >=  vp.prec)
   cond2       <- (eig[i] >= aparallel[i])
   nc          <- i-1
@@ -186,8 +188,8 @@ function(eig=NULL, x=eig, aparallel = NULL, cor=TRUE, model="components", criter
   # Assure that all the optimal coordinates will be computed
   for (i in (nc+1):(nk-2)) {
    ind        <- k[c(i+1,nk)]
-   vp.p       <- lm(eig[c(i+1,nk)] ~ ind)
-   vp.prec    <- pred.eig[i] <- sum(c(1,i)* coef(vp.p))
+   vp.p       <- stats::lm(eig[c(i+1,nk)] ~ ind)
+   vp.prec    <- pred.eig[i] <- sum(c(1,i)* stats::coef(vp.p))
    }
 
   # Assure that all the acceleration factors will be computed

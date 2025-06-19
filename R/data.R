@@ -83,7 +83,8 @@
 #' @keywords datasets
 #'
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' # EXAMPLES FROM DATASET
 #'  data(dFactors)
 #'
@@ -95,7 +96,8 @@
 #'
 #' # SCREE PLOT OF THE Cliff1 DATASET
 #'  plotuScree(dFactors$Cliff1$eigenvalues)
-#'
+#'  }
+#' }
 "dFactors"
 
 

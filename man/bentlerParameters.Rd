@@ -5,11 +5,21 @@
 \title{Bentler and Yuan's Computation of the LRT Index and the Linear Trend
 Coefficients}
 \usage{
-bentlerParameters(x, N, nFactors, log = TRUE, cor = TRUE,
+bentlerParameters(
+  x,
+  N,
+  nFactors,
+  log = TRUE,
+  cor = TRUE,
   minPar = c(min(lambda) - abs(min(lambda)) + 0.001, 0.001),
-  maxPar = c(max(lambda), lm(lambda ~ I(length(lambda):1))$coef[2]),
-  resParx = c(0.01, 2), resPary = c(0.01, 2), graphic = TRUE,
-  resolution = 30, typePlot = "wireframe", ...)
+  maxPar = c(max(lambda), stats::lm(lambda ~ I(length(lambda):1))$coef[2]),
+  resParx = c(0.01, 2),
+  resPary = c(0.01, 2),
+  graphic = TRUE,
+  resolution = 30,
+  typePlot = "wireframe",
+  ...
+)
 }
 \arguments{
 \item{x}{numeric: a \code{vector} of eigenvalues, a \code{matrix} of
@@ -106,8 +116,11 @@ A better strategy proposed by Bentler an Yuan (1998) is to use a minimized
 of the \pkg{nFactors} package.
 }
 \examples{
+\dontrun{
+if(interactive()){
 ## ................................................
 ## SIMPLE EXAMPLE OF THE BENTLER AND YUAN PROCEDURE
+## #' @importFrom graphics abline
 
 # Bentler (1996, p. 309) Table 2 - Example 2 .............
 n=649
@@ -157,6 +170,9 @@ plotuScree(x=example1, model="components",
    " factors retained by the Bentler and Yuan's procedure (1998, p. 140)",
    sep=""))
 # ........................................................
+ }
+}
+
 }
 \references{
 Bentler, P. M. and Yuan, K.-H. (1996). Test of linear trend in

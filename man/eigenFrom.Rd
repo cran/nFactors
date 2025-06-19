@@ -19,6 +19,8 @@ the \pkg{nFactors} package to be able to apply these to a vector of eigenvalues,
 a matrix of correlations or covariance or a \code{data.frame}.
 }
 \examples{
+\dontrun{
+if(interactive()){
 # .......................................................
 # Different data types
 # Examples of adequate data sources
@@ -48,6 +50,8 @@ eigenFrom(x4)
 # x6 <- table(x5)          # Error: not a valid data class
 # eigenFrom(x6)
 # .......................................................
+ }
+}
 }
 \author{
 Gilles Raiche \cr Centre sur les Applications des Modeles de

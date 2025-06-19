@@ -4,8 +4,15 @@
 \alias{nBartlett}
 \title{Bartlett, Anderson and Lawley Procedures to Determine the Number of Components/Factors}
 \usage{
-nBartlett(x, N, alpha = 0.05, cor = TRUE, details = TRUE,
-  correction = TRUE, ...)
+nBartlett(
+  x,
+  N,
+  alpha = 0.05,
+  cor = TRUE,
+  details = TRUE,
+  correction = TRUE,
+  ...
+)
 }
 \arguments{
 \item{x}{numeric: a \code{vector} of eigenvalues, a \code{matrix} of correlations or of covariances or a \code{data.frame} of data (eigenFrom)}
@@ -40,12 +47,14 @@ The hypothesis tested is: \cr
 
 This hypothesis is verified by the application of different version of a
 \eqn{\chi^2} test with different values for the degrees of freedom.
-Each of these tests shares the compution of a \eqn{V_k} value: \cr
+Each of these tests shares the computation of a \eqn{V_k} value: \cr
 
 (2) \eqn{\qquad \qquad V_k  =
-  \prod\limits_{i = k + 1}^p
-  \left\{ \frac{\displaystyle \lambda_i}{\frac{1}{q}\sum\limits_{i = k + 1}^p {\lambda
-  _i } } \right\} }
+\prod\limits_{i = k + 1}^p
+\left[
+  {{\lambda _i} \over {1 \over q }
+    \sum\limits_{i = k + 1}^p {\lambda _i }}
+  \right] }
 
 \eqn{p} is the number of eigenvalues, \eqn{k} the number of eigenvalues to test,
 and \eqn{q} the \eqn{p-k} remaining eigenvalues. \eqn{n} is equal to the sample size
@@ -57,7 +66,7 @@ of freedom and is equal to: \cr
 (3) \eqn{\qquad \qquad - n\log (V_k ) \sim \chi _{(q + 2)(q - 1)/2}^2 } \cr
 
 An improvement of this statistic from Bartlett (Bentler, and Yuan, 1996, p. 300;
-                                                Horn and Engstrom, 1979, equation 8) is distributed as a \eqn{\chi^2}
+Horn and Engstrom, 1979, equation 8) is distributed as a \eqn{\chi^2}
 with \eqn{(q)(q - 1)/2} degrees of freedom and is equal to: \cr
 
 (4) \eqn{\qquad \qquad - \left[ {n - k - {{2q^2 q + 2} \over {6q}}}
@@ -73,6 +82,8 @@ Bartlett (1950, 1951) proposed a correction to the degrees of freedom of these \
 first significant test: \eqn{(q+2)(q - 1)/2}. \cr
 }
 \examples{
+\dontrun{
+if(interactive()){
 ## ................................................
 ## SIMPLE EXAMPLE OF A BARTLETT PROCEDURE
 
@@ -87,29 +98,30 @@ plotuScree(eig, main=paste(results$nFactors[1], ", ",
                            results$nFactors[3],
                            " factors retained by the LRT procedures",
                            sep=""))
-
+ }
+}
 }
 \references{
 Anderson, T. W. (1963). Asymptotic theory for principal component analysis. \emph{Annals of Mathematical Statistics, 34}, 122-148.
 
- Bartlett, M. S. (1950). Tests of significance in factor analysis. \emph{British Journal of Psychology, 3}, 77-85.
+Bartlett, M. S. (1950). Tests of significance in factor analysis. \emph{British Journal of Psychology, 3}, 77-85.
 
- Bartlett, M. S. (1951). A further note on tests of significance. \emph{British Journal of Psychology, 4}, 1-2.
+Bartlett, M. S. (1951). A further note on tests of significance. \emph{British Journal of Psychology, 4}, 1-2.
 
- Bentler, P. M. and Yuan, K.-H. (1996). Test of linear trend in eigenvalues of a covariance matrix with application to data analysis.
- \emph{British Journal of Mathematical and Statistical Psychology, 49}, 299-312.
+Bentler, P. M. and Yuan, K.-H. (1996). Test of linear trend in eigenvalues of a covariance matrix with application to data analysis.
+\emph{British Journal of Mathematical and Statistical Psychology, 49}, 299-312.
 
- Bentler, P. M. and Yuan, K.-H. (1998). Test of linear trend in the smallest
- eigenvalues of the correlation matrix. \emph{Psychometrika, 63}(2), 131-144.
+Bentler, P. M. and Yuan, K.-H. (1998). Test of linear trend in the smallest
+eigenvalues of the correlation matrix. \emph{Psychometrika, 63}(2), 131-144.
 
- Horn, J. L. and Engstrom, R. (1979). Cattell's scree test in relation to
- Bartlett's chi-square test and other observations on the number of factors
- problem. \emph{Multivariate Behavioral Reasearch, 14}(3), 283-300.
+Horn, J. L. and Engstrom, R. (1979). Cattell's scree test in relation to
+Bartlett's chi-square test and other observations on the number of factors
+problem. \emph{Multivariate Behavioral Reasearch, 14}(3), 283-300.
 
- James, A. T. (1969). Test of equality of the latent roots of the covariance
- matrix. \emph{In} P. K. Krishna (Eds): \emph{Multivariate analysis, volume 2}.New-York, NJ: Academic Press.
+James, A. T. (1969). Test of equality of the latent roots of the covariance
+matrix. \emph{In} P. K. Krishna (Eds): \emph{Multivariate analysis, volume 2}.New-York, NJ: Academic Press.
 
- Lawley, D. N. (1956). Tests of significance for the latent roots of covarianceand correlation matrix. \emph{Biometrika, 43}(1/2), 128-136.
+Lawley, D. N. (1956). Tests of significance for the latent roots of covarianceand correlation matrix. \emph{Biometrika, 43}(1/2), 128-136.
 }
 \seealso{
 \code{\link{plotuScree}}, \code{\link{nScree}}, \code{\link{plotnScree}}, \code{\link{plotParallel}}

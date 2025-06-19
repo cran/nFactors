@@ -4,9 +4,15 @@
 \alias{plotuScree}
 \title{Plot of the Usual Cattell's Scree Test}
 \usage{
-plotuScree(Eigenvalue, x = Eigenvalue, model = "components",
-  ylab = "Eigenvalues", xlab = "Components", main = "Scree Plot",
-  ...)
+plotuScree(
+  Eigenvalue,
+  x = Eigenvalue,
+  model = "components",
+  ylab = "Eigenvalues",
+  xlab = "Components",
+  main = "Scree Plot",
+  ...
+)
 }
 \arguments{
 \item{Eigenvalue}{depreciated parameter: eigenvalues to analyse (not used if
@@ -34,13 +40,15 @@ Nothing returned with this function.
 matrix.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 ## SCREE PLOT
  data(dFactors)
  attach(dFactors)
  eig = Cliff1$eigenvalues
  plotuScree(x=eig)
-
+ }
+}
 }
 \references{
 Cattell, R. B. (1966). The scree test for the number of factors.

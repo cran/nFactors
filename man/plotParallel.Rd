@@ -4,9 +4,17 @@
 \alias{plotParallel}
 \title{Plot a Parallel Analysis Class Object}
 \usage{
-plotParallel(parallel, eig = NA, x = eig, model = "components",
-  legend = TRUE, ylab = "Eigenvalues", xlab = "Components",
-  main = "Parallel Analysis", ...)
+plotParallel(
+  parallel,
+  eig = NA,
+  x = eig,
+  model = "components",
+  legend = TRUE,
+  ylab = "Eigenvalues",
+  xlab = "Components",
+  main = "Parallel Analysis",
+  ...
+)
 }
 \arguments{
 \item{parallel}{numeric: vector of the results of a previous parallel
@@ -42,7 +50,8 @@ If \code{eig} is \code{FALSE} the plot shows only the parallel analysis
 without eigenvalues.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 ## SIMPLE EXAMPLE OF A PARALLEL ANALYSIS
 ## OF A CORRELATION MATRIX WITH ITS PLOT
  data(dFactors)
@@ -59,7 +68,8 @@ without eigenvalues.
 ## PARALLEL ANALYSIS SCREE PLOT
  plotParallel(results, x=eig)
  plotParallel(results)
-
+ }
+}
 
 }
 \references{

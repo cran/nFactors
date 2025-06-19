@@ -36,9 +36,10 @@
 #' bulletin, 99}, 432-442.
 #' @keywords multivariate
 #' @export
-#' @importFrom stats cov
+#' @importFrom stats cov cor
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' # .......................................................
 #' # Example from the iris data
 #'  eigenvalues <- eigenComputes(x=iris[,-5])
@@ -61,6 +62,8 @@
 #'                    option="bootstrap",method="spearman")
 #'  eigenBootParallel(x=iris[,-5],quantile=0.05,
 #'                    option="bootstrap",method="kendall")
+#'  }
+#' }
 #'
 "eigenBootParallel" <-
 function(x, quantile=0.95, nboot=30, option="permutation", cor=TRUE, model="components", ...)
@@ -76,8 +79,8 @@ function(x, quantile=0.95, nboot=30, option="permutation", cor=TRUE, model="comp
  if (option == "permutation") {
   for (i in 1:nboot) {
    rPerm   <- apply(x,2,sample, replace=TRUE)
-   if (cor == TRUE)        corY <- cor(rPerm, ...)
-   if (cor == FALSE)       corY <- cov(rPerm, ...)
+   if (cor == TRUE)        corY <- stats::cor(rPerm, ...)
+   if (cor == FALSE)       corY <- stats::cov(rPerm, ...)
    if (model == "factors") corY <- corFA(corY, method="ginv")
    res[i,] <- eigen(corY, only.values=TRUE)$values
    }
@@ -86,12 +89,12 @@ function(x, quantile=0.95, nboot=30, option="permutation", cor=TRUE, model="comp
  if (option == "bootstrap") {
   for (i in 1:nboot) {
    rBoot   <- sample(1:dim(x)[1], dim(x)[1], replace=TRUE)
-   if (cor == TRUE)        corY <- cor(x[rBoot,], ...)
-   if (cor == FALSE)       corY <- cov(x[rBoot,], ...)
+   if (cor == TRUE)        corY <- stats::cor(x[rBoot,], ...)
+   if (cor == FALSE)       corY <- stats::cov(x[rBoot,], ...)
    if (model == "factors") corY <- corFA(corY, method="ginv")
    res[i,] <- eigen(corY, only.values=TRUE)$values
-   #if (cor == TRUE)  res[i,] <- eigen(cor(x[rBoot,], ...), only.values=TRUE)$values
-   #if (cor == FALSE) res[i,] <- eigen(cov(x[rBoot,], ...), only.values=TRUE)$values
+   #if (cor == TRUE)  res[i,] <- eigen(stats::cor(x[rBoot,], ...), only.values=TRUE)$values
+   #if (cor == FALSE) res[i,] <- eigen(stats::cov(x[rBoot,], ...), only.values=TRUE)$values
    }
   }
 

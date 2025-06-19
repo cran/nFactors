@@ -22,15 +22,19 @@
 #' @references Cattell, R. B. (1966). The scree test for the number of factors.
 #' \emph{Multivariate Behavioral Research, 1}, 245-276.
 #' @export
+#' @importFrom graphics lines par text plot.default
+#' @importFrom stats cor
 #' @keywords Graphics
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' ## SCREE PLOT
 #'  data(dFactors)
 #'  attach(dFactors)
 #'  eig = Cliff1$eigenvalues
 #'  plotuScree(x=eig)
-#'
+#'  }
+#' }
 "plotuScree" <-
 function(Eigenvalue, x=Eigenvalue, model  = "components",
          ylab   = "Eigenvalues",
@@ -40,10 +44,10 @@ function(Eigenvalue, x=Eigenvalue, model  = "components",
  Eigenvalue  <- eigenComputes(x, ...)
  if (!inherits(Eigenvalue, "numeric")) stop("use only with \"numeric\" objects")
  if (model == "factors") xlab <- "Factors"
- par(mfrow = c(1,1))
+ graphics::par(mfrow = c(1,1))
  nk          <- length(Eigenvalue)
  Component   <- 1:nk
- plot.default(as.numeric(Component),
+ graphics::plot.default(as.numeric(Component),
               as.numeric(Eigenvalue),
               type = 'b',col = "black", pch = 1,
               ylab = ylab,

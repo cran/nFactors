@@ -4,8 +4,15 @@
 \alias{eigenBootParallel}
 \title{Bootstrapping of the Eigenvalues From a Data Frame}
 \usage{
-eigenBootParallel(x, quantile = 0.95, nboot = 30,
-  option = "permutation", cor = TRUE, model = "components", ...)
+eigenBootParallel(
+  x,
+  quantile = 0.95,
+  nboot = 30,
+  option = "permutation",
+  cor = TRUE,
+  model = "components",
+  ...
+)
 }
 \arguments{
 \item{x}{data.frame: data from which a correlation matrix will be obtained}
@@ -39,7 +46,8 @@ to replace the eigenvalues inputted to a parallel analysis.  The
 data by column permutation (Buja and Eyuboglu, 1992).
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 # .......................................................
 # Example from the iris data
  eigenvalues <- eigenComputes(x=iris[,-5])
@@ -62,6 +70,8 @@ data by column permutation (Buja and Eyuboglu, 1992).
                    option="bootstrap",method="spearman")
  eigenBootParallel(x=iris[,-5],quantile=0.05,
                    option="bootstrap",method="kendall")
+ }
+}
 
 }
 \references{

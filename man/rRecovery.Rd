@@ -32,7 +32,8 @@ recovery of the initial correlation or covariance matrix by the factor
 solution.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 # .......................................................
 # Example from Kim and Mueller (1978, p. 10)
 # Population: upper diagonal
@@ -66,7 +67,8 @@ solution.
          rMultiple  = rMultiple), 3)
 # .......................................................
 
-
+ }
+}
 }
 \seealso{
 \code{\link{componentAxis}}, \code{\link{iterativePrincipalAxis}},

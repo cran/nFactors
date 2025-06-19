@@ -28,6 +28,8 @@ fonctions of the \pkg{nFactors} package in order to apply these to a vector of
 eigenvalues, a matrix of correlations or covariance or a data frame.
 }
 \examples{
+\dontrun{
+if(interactive()){
 # .......................................................
 # Different data types
 # Vector of eigenvalues
@@ -49,7 +51,8 @@ eigenComputes(x3, cor=FALSE, use="everything")
 x4 <- cor(x2)
 eigenComputes(x4, use="everything")
 # .......................................................
-
+ }
+}
 }
 \author{
 Gilles Raiche \cr Centre sur les Applications des Modeles de

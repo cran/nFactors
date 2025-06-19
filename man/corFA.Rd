@@ -18,7 +18,8 @@ A correlation matrix with coerced variables with communalities in the diagonal.
 This function inserts communalities in the diagonal of a correlation/covariance matrix.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 ## LOWER CORRELATION MATRIX WITH ZEROS ON UPPER PART
 ## From Gorsuch (table 1.3.1)
  gorsuch <- c(
@@ -39,6 +40,8 @@ This function inserts communalities in the diagonal of a correlation/covariance 
 ## REPLACE DIAGONAL WITH COMMUNALITIES
  gorsuchCfa <- corFA(gorsuch)
  gorsuchCfa
+ }
+}
 
 }
 \seealso{

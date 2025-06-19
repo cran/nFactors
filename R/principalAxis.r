@@ -32,10 +32,11 @@
 #' Kim, J.-O. and Mueller, C. W. (1987). \emph{Factor analysis. Statistical
 #' methods and practical issues}. Beverly Hills, CA: Sage.
 #' @export
-# #' @importFrom MASS ginv
+#' @importFrom MASS ginv
 #' @keywords multivariate
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' # .......................................................
 #' # Example from Kim and Mueller (1978, p. 10)
 #' # Population: upper diagonal
@@ -62,12 +63,13 @@
 #'  principalAxis(RL, nFactors=2, communalities="maxr")
 #'  principalAxis(RL, nFactors=2, communalities="multiple")
 #' # .......................................................
-#'
+#'  }
+#' }
 "principalAxis" <-
 function(R, nFactors=2, communalities="component") {
  if (communalities == "component")            diag(R)  <- componentAxis(R)$communalities
  if (communalities == "maxr")      { RT <- R; diag(RT) <- 0; diag(R) <- apply(RT, 1, max)}
- if (communalities == "ginv")                 diag(R)  <- sqrt(1-1/diag(ginv(R)))
+ if (communalities == "ginv")                 diag(R)  <- sqrt(1-1/diag(MASS::ginv(R)))
  if (communalities == "multiple")  {
   if (all(eigen(R)$values > 0)) diag(R) <- sqrt(1-1/diag(solve(R)))  # Gorsuch (1983, p. 106)
   else return("Not all eigenvalues are greater than 0") # Verication of positive definiteness

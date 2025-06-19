@@ -4,8 +4,13 @@
 \alias{iterativePrincipalAxis}
 \title{Iterative Principal Axis Analysis}
 \usage{
-iterativePrincipalAxis(R, nFactors = 2, communalities = "component",
-  iterations = 20, tolerance = 0.001)
+iterativePrincipalAxis(
+  R,
+  nFactors = 2,
+  communalities = "component",
+  iterations = 20,
+  tolerance = 0.001
+)
 }
 \arguments{
 \item{R}{numeric: correlation or covariance matrix}
@@ -33,18 +38,20 @@ tolerance    numeric: minimal difference in the estimated communalities after a 
 }
 \description{
 The \code{iterativePrincipalAxis} function returns a principal axis analysis with
- iterated communality estimates. Four different choices of initial communality
- estimates are given: maximum correlation, multiple correlation (usual and
- generalized inverse) or estimates based
- on the sum of the squared principal component analysis loadings. Generally, statistical
- packages initialize the communalities at the multiple correlation value.
- Unfortunately, this strategy cannot always deal with singular correlation or
- covariance matrices.
- If a generalized inverse, the maximum correlation or the estimated communalities
- based on the sum of loadings
- are used instead, then a solution can be computed.
+iterated communality estimates. Four different choices of initial communality
+estimates are given: maximum correlation, multiple correlation (usual and
+generalized inverse) or estimates based
+on the sum of the squared principal component analysis loadings. Generally, statistical
+packages initialize the communalities at the multiple correlation value.
+Unfortunately, this strategy cannot always deal with singular correlation or
+covariance matrices.
+If a generalized inverse, the maximum correlation or the estimated communalities
+based on the sum of loadings
+are used instead, then a solution can be computed.
 }
 \examples{
+\dontrun{
+if(interactive()){
 ## ................................................
 # Example from Kim and Mueller (1978, p. 10)
 # Population: upper diagonal
@@ -77,14 +84,16 @@ fMultiple  <- iterativePrincipalAxis(RU, nFactors=nFactors,
 fMultiple
 rRecovery(RU,fMultiple$loadings, diagCommunalities=FALSE)
 # .......................................................
+ }
+}
 
 }
 \references{
 Kim, J.-O. and Mueller, C. W. (1978). \emph{Introduction to factor analysis. What it
-  is and how to do it}. Beverly Hills, CA: Sage.
+is and how to do it}. Beverly Hills, CA: Sage.
 
 Kim, J.-O. and Mueller, C. W. (1987). \emph{Factor analysis. Statistical methods and
-  practical issues}. Beverly Hills, CA: Sage.
+practical issues}. Beverly Hills, CA: Sage.
 }
 \seealso{
 \code{\link{componentAxis}}, \code{\link{principalAxis}}, \code{\link{rRecovery}}

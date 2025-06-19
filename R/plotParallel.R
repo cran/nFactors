@@ -32,7 +32,8 @@
 #' @importFrom graphics plot.default lines
 #' @keywords Graphics
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' ## SIMPLE EXAMPLE OF A PARALLEL ANALYSIS
 #' ## OF A CORRELATION MATRIX WITH ITS PLOT
 #'  data(dFactors)
@@ -49,7 +50,8 @@
 #' ## PARALLEL ANALYSIS SCREE PLOT
 #'  plotParallel(results, x=eig)
 #'  plotParallel(results)
-#'
+#'  }
+#' }
 #'
 "plotParallel" <-
 function(parallel,
@@ -69,7 +71,7 @@ function(parallel,
   if (length(eig) == 1) {
    Component <- var:1
    Location  <- seq(from = 0, to = max(parallel$eigen$qevpea)*3, length.out = var)
-   plot.default(as.numeric(Component),
+   graphics::plot.default(as.numeric(Component),
                 as.numeric(Location),
                 type = "n",
                 main = main,
@@ -78,8 +80,8 @@ function(parallel,
     }
 
   if (length(eig) > 1) {plotuScree(eig, main = main, xlab = xlab, ylab = ylab) }
-  lines(1:var, parallel$eigen$qevpea , col = "green", type = "p", pch = 2)
-  lines(1:var, parallel$eigen$mevpea,  col = "red")
+  graphics::lines(1:var, parallel$eigen$qevpea , col = "green", type = "p", pch = 2)
+  graphics::lines(1:var, parallel$eigen$mevpea,  col = "red")
   if (legend == TRUE) {
    if (length(eig) == 1) {
      leg <-  c("Mean Eigenvalues", "Centiles of the Eigenvalues")

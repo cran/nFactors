@@ -16,6 +16,8 @@
 # #' @import methods
 #' @keywords multivariate
 #' @examples
+#' \dontrun{
+#' if(interactive()){
 #' # .......................................................
 #' # Different data types
 #' # Examples of adequate data sources
@@ -45,6 +47,8 @@
 #' # x6 <- table(x5)          # Error: not a valid data class
 #' # eigenFrom(x6)
 #' # .......................................................
+#'  }
+#' }
 eigenFrom <-
 function(x) {
  #classType <- methods::class1(x)

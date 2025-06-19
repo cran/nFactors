@@ -21,10 +21,11 @@
 #' for Cattell's scree test. Methodology, 9(1), 23-29.
 #' @export
 #' @importFrom graphics lines par text plot.default
-# #' @importFrom stats lm coef
+#' @importFrom stats lm coef
 #' @keywords Graphics
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' ## INITIALISATION
 #'  data(dFactors)                      # Load the nFactors dataset
 #'  attach(dFactors)
@@ -51,7 +52,8 @@
 #'
 #' ## PLOT ACCORDING TO THE nScree CLASS
 #'  plotnScree(results)
-#'
+#'  }
+#' }
 "plotnScree" <-
 function (nScree,
           legend = TRUE,
@@ -66,21 +68,21 @@ function (nScree,
    #if (!exists("main"))                    main <- "Non Graphical Solutions to Scree Test"  # To develop
    if (nScree$Model == "components") nkaiser = "Eigenvalues (>mean  = " else nkaiser = "Eigenvalues (>0 = "
    if (nScree$Model == "factors")  xlab   = "Factors"
-   par(col   = 1, pch = 1)     # Color and symbol for usual scree
-   par(mfrow = c(1,1))
+   graphics::par(col   = 1, pch = 1)     # Color and symbol for usual scree
+   graphics::par(mfrow = c(1,1))
    eig        <- nScree$Analysis$Eigenvalues
    k          <- 1:length(eig)
    #plotuScree(x=eig, ...)                                                                   # To develop
    plotuScree(x=eig, main=main, xlab=xlab, ylab=ylab)
    nk         <- length(eig)
    noc        <- nScree$Components$noc
-   vp.p       <- lm(eig[c(noc+1,nk)] ~ k[c(noc+1,nk)])
-   x          <- sum(c(1,1) * coef(vp.p))
-   y          <- sum(c(1,nk)* coef(vp.p))
-   par(col = 10)            # Color for optimal coordinates
-   lines(k[c(1,nk)],c(x,y))
-   par(col = 11,pch=2)            # Color and symbol for parallel analysis
-   lines(1:nk, nScree$Analysis$Par.Analysis, type = "b")
+   vp.p       <- stats::lm(eig[c(noc+1,nk)] ~ k[c(noc+1,nk)])
+   x          <- sum(c(1,1) * stats::coef(vp.p))
+   y          <- sum(c(1,nk)* stats::coef(vp.p))
+   graphics::par(col = 10)            # Color for optimal coordinates
+   graphics::lines(k[c(1,nk)],c(x,y))
+   graphics::par(col = 11,pch=2)            # Color and symbol for parallel analysis
+   graphics::lines(1:nk, nScree$Analysis$Par.Analysis, type = "b")
    if (legend == TRUE) {
      leg.txt  <- c(paste(nkaiser,nScree$Components$nkaiser,")"),
                  c(paste("Parallel Analysis (n = ",nScree$Components$nparallel,")")),
@@ -93,7 +95,7 @@ function (nScree,
             )
      }
    naf        <-   nScree$Components$naf
-   text(x = noc ,    y = eig[noc],     label = " (OC)", cex = .70, adj = c(0,0), col = 2)
-   text(x = naf + 1, y = eig[naf + 1], label = " (AF)", cex = .70, adj = c(0,0), col = 4)
+   graphics::text(x = noc ,    y = eig[noc],     label = " (OC)", cex = .70, adj = c(0,0), col = 2)
+   graphics::text(x = naf + 1, y = eig[naf + 1], label = " (AF)", cex = .70, adj = c(0,0), col = 4)
    }
 

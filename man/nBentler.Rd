@@ -4,10 +4,17 @@
 \alias{nBentler}
 \title{Bentler and Yuan's Procedure to Determine the Number of Components/Factors}
 \usage{
-nBentler(x, N, log = TRUE, alpha = 0.05, cor = TRUE,
-  details = TRUE, minPar = c(min(lambda) - abs(min(lambda)) + 0.001,
-  0.001), maxPar = c(max(lambda), lm(lambda ~
-  I(length(lambda):1))$coef[2]), ...)
+nBentler(
+  x,
+  N,
+  log = TRUE,
+  alpha = 0.05,
+  cor = TRUE,
+  details = TRUE,
+  minPar = c(min(lambda) - abs(min(lambda)) + 0.001, 0.001),
+  maxPar = c(max(lambda), stats::lm(lambda ~ I(length(lambda):1))$coef[2]),
+  ...
+)
 }
 \arguments{
 \item{x}{numeric: a \code{vector} of eigenvalues, a \code{matrix} of
@@ -88,7 +95,8 @@ A better strategy proposed by Bentler an Yuan (1998) is to used a minimized
 of the \pkg{nFactors} package.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 ## ................................................
 ## SIMPLE EXAMPLE OF THE BENTLER AND YUAN PROCEDURE
 
@@ -121,7 +129,8 @@ plotuScree(x=example1, model="components",
    " factors retained by the Bentler and Yuan's procedure (1998, p. 140)",
    sep=""))
 # ........................................................
-
+ }
+}
 }
 \references{
 Bentler, P. M. and Yuan, K.-H. (1996). Test of linear trend in

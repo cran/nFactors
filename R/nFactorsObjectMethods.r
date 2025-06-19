@@ -6,7 +6,7 @@
 # #' @aliases is.nFactors print.nFactors summary.nFactors
 
 #' @rdname nFactorsObjectMethods
-#' 
+#'
 #' @param x nFactors: an object of the class nFactors
 #' @param ...  variable: additionnal parameters to give to the \code{print}
 #' function with \code{print.nFactors} or to the \code{summary} function with
@@ -25,14 +25,15 @@
 #' \email{raiche.gilles@@uqam.ca}
 #' @seealso \code{\link{nBentler}}, \code{\link{nBartlett}},
 #' \code{\link{nCng}}, \code{\link{nMreg}}, \code{\link{nSeScree}}
-#' @references 
+#' @references
 #' Raiche, G., Walls, T. A., Magis, D., Riopel, M. and Blais, J.-G. (2013). Non-graphical solutions
 #' for Cattell's scree test. Methodology, 9(1), 23-29.
 #'
 #' @export
 #' @keywords multivariate
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' ## SIMPLE EXAMPLE
 #'  data(dFactors)
 #'  eig      <- dFactors$Raiche$eigenvalues
@@ -48,6 +49,8 @@
 #'  res <- nScree(eig);      res; is.nFactors(res); summary(res, digits=2)
 #'
 ## .................................................................
+#'  }
+#' }
 is.nFactors <-
 function(x) {
  if (any(class(x) == "nFactors")) return(TRUE) else return(FALSE)

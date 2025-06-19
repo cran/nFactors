@@ -39,11 +39,13 @@
 #' for Cattell's scree test. Methodology, 9(1), 23-29.
 #'
 #' @export
+#' @importFrom graphics boxplot abline lines
 #' @importFrom stats median
 #' @keywords multivariate
 #' @examples
 #'
 #' \dontrun{
+#' if(interactive()){
 #' ## INITIALISATION
 #'  library(xtable)
 #'  library(nFactors)
@@ -69,7 +71,8 @@
 #'  summary(mzwick, index=1:5, eigenSelect=1:10, digits=3)
 #'  print(mzwick, index=1:10)
 #'  plot(x=mzwick, index=c(1:10), cex.axis=0.7, col="red")
-#'  boxplot(x=mzwick, nFactors=3, vLine="blue", col="red")
+#'  graphics::boxplot(x=mzwick, nFactors=3, vLine="blue", col="red")
+#'   }
 #'  }
 #'
 ## .................................................................
@@ -119,8 +122,8 @@ boxplot.structureSim <- function(x, nFactors=NULL, eigenSelect=NULL,
  if (!is.structureSim(x)) stop("Not a structureSim object")
  if (is.null(eigenSelect)) eigenSelect <- c(1:dim(x$details$eigenvalues)[2])
 
- boxplot(x$details$eigenvalues[,eigenSelect], xlab=xlab, ylab=ylab, main=main, ...)
- abline(v=nFactors, lty=2, col=vLine)
+ graphics::boxplot(x$details$eigenvalues[,eigenSelect], xlab=xlab, ylab=ylab, main=main, ...)
+ graphics::abline(v=nFactors, lty=2, col=vLine)
  }
  # boxplot(mzwick, nFactors=3, eigenSelect=1:5, vLine="blue", col="red")
  # boxplot.structureSim(x)
@@ -143,9 +146,9 @@ plot.structureSim <- function(x, nFactors=NULL, index=NULL, main="Index Acuracy 
  tx                <- tx[order(tx[,1]),]
  plot(Mean ~ Index, type="n", data=tx, main=main, ...)
  #plot(Mean ~ Index, data=tx, cex.lab=1, cex.axis=0.7, type="n", ylab=ylab)
- abline(h=nFactors, ...)
- abline(h=median(tx[2,], na.rm=TRUE), lty=2, col="black")
- for (i in 1:length(tx[,2])) lines(y=c(0,tx[i,2]), x=c(i,i), lty=2)
+ graphics::abline(h=nFactors, ...)
+ graphics::abline(h=stats::median(tx[2,], na.rm=TRUE), lty=2, col="black")
+ for (i in 1:length(tx[,2])) graphics::lines(y=c(0,tx[i,2]), x=c(i,i), lty=2)
  }
  # plot.structureSim(x=mzwick, nFactors=3, index=c(1:10), cex.axis=0.7, col="red")
  # plot.structureSim(x)

@@ -11,9 +11,9 @@
 #' @seealso \code{\link{plotuScree}}, \code{\link{nScree}},
 #' \code{\link{plotnScree}}, \code{\link{plotParallel}}
 #'
-#'
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' ## LOWER CORRELATION MATRIX WITH ZEROS ON UPPER PART
 #' ## From Gorsuch (table 1.3.1)
 #'  gorsuch <- c(
@@ -34,11 +34,13 @@
 #' ## REPLACE DIAGONAL WITH COMMUNALITIES
 #'  gorsuchCfa <- corFA(gorsuch)
 #'  gorsuchCfa
+#'  }
+#' }
 #'
 #' @keywords manip
 "corFA" <-
 function(R, method="ginv") {
  R <- as.matrix(R)
- if (method == "ginv") return(R - ginv(diag(diag(ginv(R)))))
+ if (method == "ginv") return(R - MASS::ginv(diag(diag(MASS::ginv(R)))))
  }
 

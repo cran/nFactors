@@ -44,7 +44,8 @@ are already implemented in the \code{nFactors} package, but are easier to
 use with generic functions like these.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 ## INITIALISATION
  data(dFactors)                      # Load the nFactors dataset
  attach(dFactors)
@@ -71,8 +72,8 @@ use with generic functions like these.
 
 ## PLOT ACCORDING TO THE nScree CLASS
  plot(results)
-
-
+ }
+}
 }
 \references{
 Raiche, G., Walls, T. A., Magis, D., Riopel, M. and Blais, J.-G. (2013). Non-graphical solutions

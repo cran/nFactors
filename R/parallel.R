@@ -47,11 +47,12 @@
 #' Horn, J. L. (1965). A rationale and test of the number of factors in factor
 #' analysis. \emph{Psychometrika, 30}, 179-185.
 #' @export
-#' @importFrom  MASS ginv mvrnorm
+#' @importFrom MASS ginv mvrnorm
 #' @importFrom stats cov dnorm qnorm
 #' @keywords multivariate
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' ## SIMPLE EXAMPLE OF A PARALLEL ANALYSIS
 #' ## OF A CORRELATION MATRIX WITH ITS PLOT
 #'  data(dFactors)
@@ -79,7 +80,8 @@
 #'
 #' ## ANOTHER SOLUTION IS SIMPLY TO
 #'  plotParallel(results)
-#'
+#'  }
+#' }
 "parallel" <-
 function(subject=100, var=10, rep=100, cent=0.05, quantile=cent, model="components", sd=diag(1,var), ...)
  {
@@ -95,14 +97,14 @@ function(subject=100, var=10, rep=100, cent=0.05, quantile=cent, model="componen
   for (k in c(1:rep)) {
    # y              <- rnorm(y, sd=sqrt(mean(diag(sd))))  # Old version without covariance
    # y              <- matrix(y, nrow=r, ncol=c)          # Old version without covariance
-   y <- mvrnorm(n = r, mu=rep(0,var), Sigma=sd, empirical=FALSE)
-   corY           <- cov(y, ...) # The previous version was only cor(y)
+   y <- MASS::mvrnorm(n = r, mu=rep(0,var), Sigma=sd, empirical=FALSE)
+   corY           <- stats::cov(y, ...) # The previous version was only cor(y)
    if (model == "components") diag(corY) <- diag(sd) # To constraint the diagonal to sd for PCA
-   if (model == "factors") corY <- corY - ginv(diag(diag(ginv(corY)))) # To constraint the diagonal to communalities for FCA
+   if (model == "factors") corY <- corY - MASS::ginv(diag(diag(MASS::ginv(corY)))) # To constraint the diagonal to communalities for FCA
    evpea          <- rbind(evpea, eigen(corY)[[1]])
    }
   # Temporay function to compute the standard error of a quantile
-  SEcentile <- function(sd, n = 100, p = 0.95) {return(sd/sqrt(n) * sqrt(p*(1-p))/dnorm(qnorm(p))) }
+  SEcentile <- function(sd, n = 100, p = 0.95) {return(sd/sqrt(n) * sqrt(p*(1-p))/stats::dnorm(stats::qnorm(p))) }
 
   # Summary statistics
   sprob         <- c(cent)

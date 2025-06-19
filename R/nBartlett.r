@@ -11,14 +11,14 @@
 #'
 #' This hypothesis is verified by the application of different version of a
 #' \eqn{\chi^2} test with different values for the degrees of freedom.
-#' Each of these tests shares the compution of a \eqn{V_k} value: \cr
+#' Each of these tests shares the computation of a \eqn{V_k} value: \cr
 #'
 #' (2) \eqn{\qquad \qquad V_k  =
-#'   \prod\limits_{i = k + 1}^p {\left\{ {{{\lambda _i }
-#'     \over {{\raise0.7ex\hbox{$1$} \!\mathord{\left/
-#'     {\vphantom {1 q}}\right.\kern-\nulldelimiterspace}
-#'       \!\lower0.7ex\hbox{$q$}}\sum\limits_{i = k + 1}^p {\lambda _i } }}} \right\}}
-#' }
+#' \prod\limits_{i = k + 1}^p
+#' \left[
+#'   {{\lambda _i} \over {1 \over q }
+#'     \sum\limits_{i = k + 1}^p {\lambda _i }}
+#'   \right] }
 #'
 #' \eqn{p} is the number of eigenvalues, \eqn{k} the number of eigenvalues to test,
 #' and \eqn{q} the \eqn{p-k} remaining eigenvalues. \eqn{n} is equal to the sample size
@@ -82,9 +82,11 @@
 #'  Lawley, D. N. (1956). Tests of significance for the latent roots of covarianceand correlation matrix. \emph{Biometrika, 43}(1/2), 128-136.
 #'
 #' @export
-# #' @importFrom stats pchisq
+#' @importFrom stats pchisq
 #' @keywords multivariate
 #' @examples
+#' \dontrun{
+#' if(interactive()){
 #' ## ................................................
 #' ## SIMPLE EXAMPLE OF A BARTLETT PROCEDURE
 #'
@@ -99,7 +101,8 @@
 #'                            results$nFactors[3],
 #'                            " factors retained by the LRT procedures",
 #'                            sep=""))
-#'
+#'  }
+#' }
 nBartlett <-
 function(x, N, alpha=0.05, cor=TRUE, details=TRUE, correction=TRUE, ...) {
  stopMessage  <- paste("\n These indices are only valid with a principal component solution.\n",
@@ -120,15 +123,15 @@ function(x, N, alpha=0.05, cor=TRUE, details=TRUE, correction=TRUE, ...) {
   bartlett.chi[i] <- -(N - 1 - ((2*n+5)/6) - ((2*k)/3)) * log(bartlett[i])
   bartlett.df[i]  <- .5 * (n-k) * (n-k-1)   # Bartlett without correction, from Horn and Engstrom (1979. p. 291, equation 8)
   if (correction==TRUE & bartlett.n > 0) bartlett.df[i]  <- .5 * (n-k+2) * (n-k-1)  # From Bentler and Yuan (1996, p. 300)
-  bartlett.p[i]   <- pchisq(bartlett.chi[i] , bartlett.df[i], lower.tail = FALSE)
+  bartlett.p[i]   <- stats::pchisq(bartlett.chi[i] , bartlett.df[i], lower.tail = FALSE)
   # Conditions to stop when non significant test are obtained
   anderson.chi[i] <- -N * log(bartlett[i])  # From Bentler and Yuan (1996, p. 300, equations 3-4)
   anderson.df[i]  <- .5 * (n-k+2) * (n-k-1) # From Bentler and Yuan (1996, p. 300)
-  anderson.p[i]   <- pchisq(anderson.chi[i] , anderson.df[i], lower.tail = FALSE)
+  anderson.p[i]   <- stats::pchisq(anderson.chi[i] , anderson.df[i], lower.tail = FALSE)
   lMean           <- mean(x[(k+1):n])
   lawley.chi[i]   <- -(N - 1 - ((2*n+5)/6) - ((2*k)/3) + sum((lMean^2)/((x[k]+lMean)^2))) * log(bartlett[i]) # From Bentler and Yuan (1996, p. 300, equation 6)
   lawley.df[i]    <- .5 * (n-k) * (n-k-1) # From Horn and Engstrom (1979. p. 291, equation 8)
-  lawley.p[i]     <- pchisq(lawley.chi[i] , lawley.df[i], lower.tail = FALSE)
+  lawley.p[i]     <- stats::pchisq(lawley.chi[i] , lawley.df[i], lower.tail = FALSE)
 # print(c(bartlett[i], bartlett.chi[i], bartlett.df[i], bartlett.p[i]),2)  ############ TEST #############
   if (i == 1) {
    bartlett.n <- bartlett.n + as.numeric(bartlett.p[i] <= alpha)

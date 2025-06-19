@@ -4,8 +4,13 @@
 \alias{plotnScree}
 \title{Scree Plot According to a nScree Object Class}
 \usage{
-plotnScree(nScree, legend = TRUE, ylab = "Eigenvalues",
-  xlab = "Components", main = "Non Graphical Solutions to Scree Test")
+plotnScree(
+  nScree,
+  legend = TRUE,
+  ylab = "Eigenvalues",
+  xlab = "Components",
+  main = "Non Graphical Solutions to Scree Test"
+)
 }
 \arguments{
 \item{nScree}{Results of a previous \code{nScree} analysis}
@@ -27,7 +32,8 @@ Plot a scree plot adding information about a non graphical \code{nScree}
 analysis.
 }
 \examples{
-
+\dontrun{
+if(interactive()){
 ## INITIALISATION
  data(dFactors)                      # Load the nFactors dataset
  attach(dFactors)
@@ -54,7 +60,8 @@ analysis.
 
 ## PLOT ACCORDING TO THE nScree CLASS
  plotnScree(results)
-
+ }
+}
 }
 \references{
 Raiche, G., Walls, T. A., Magis, D., Riopel, M. and Blais, J.-G. (2013). Non-graphical solutions

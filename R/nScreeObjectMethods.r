@@ -36,7 +36,8 @@
 #' @importFrom stats coef
 #' @keywords multivariate
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' ## INITIALISATION
 #'  data(dFactors)                      # Load the nFactors dataset
 #'  attach(dFactors)
@@ -63,11 +64,10 @@
 #'
 #' ## PLOT ACCORDING TO THE nScree CLASS
 #'  plot(results)
-#'
-#'
-# #' @method summary summary.nScree
-# #' @S3method summary summary.nScree
-## .................................................................
+#'  }
+#' }
+
+
 summary.nScree <-
 function(object, ...) {
  if (!is.nScree(object)) stop("Not a nScree object")

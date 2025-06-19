@@ -63,10 +63,11 @@
 #' test for factor analysis: the standard error scree. \emph{Educational and
 #' Psychological Measurement, 56}(3), 443-451.
 #' @export
-# #' @importFrom stats sd lm
+#' @importFrom stats sd lm
 #' @keywords multivariate
 #' @examples
-#'
+#' \dontrun{
+#' if(interactive()){
 #' ## SIMPLE EXAMPLE OF SESCREE AND R2 ANALYSIS
 #'
 #'  data(dFactors)
@@ -78,7 +79,8 @@
 #'  plotuScree(eig, main=paste(results$nFactors[1], " or ", results$nFactors[2],
 #'                             " factors retained by the sescree and R2 procedures",
 #'                             sep=""))
-#'
+#'  }
+#' }
 nSeScree <-
 function(x, cor=TRUE, model="components", details=TRUE, r2limen=0.75, ...) {
  x               <- eigenComputes(x, cor=cor, model=model, ...)
@@ -92,8 +94,8 @@ function(x, cor=TRUE, model="components", details=TRUE, r2limen=0.75, ...) {
  while ((i) <= (n-2)) {
   xa              <- c(i:n)
   ya              <- x[i:n]
-  ma              <- lm(ya ~ xa)
-  seScree[i]      <- sd(ya)*sqrt((1-summary(ma)$r.squared) * ((length(ya)-1)/(length(ya)-2))) # Howell(2008, p. 253)
+  ma              <- stats::lm(ya ~ xa)
+  seScree[i]      <- stats::sd(ya)*sqrt((1-summary(ma)$r.squared) * ((length(ya)-1)/(length(ya)-2))) # Howell(2008, p. 253)
   seScreeCriteria <- seScreeCriteria + as.numeric(seScree[i] > criteria)
   R2[i]           <- summary(ma)$r.squared
   R2Criteria      <- R2Criteria + as.numeric(R2[i] < r2limen)

@@ -28,6 +28,8 @@
 #' determining the number of components to retain. \emph{Psychological Bulletin, 99}, 432-442.
 #' @keywords multivariate
 #' @examples
+#' \dontrun{
+#' if(interactive()){
 #' # .......................................................
 #'# Example inspired from Zwick and Velicer (1986, table 2, p. 437)
 #'## ...................................................................
@@ -93,7 +95,8 @@
 #'plotnScree(results.fa)
 #'# ......................................................
 #'
-#'
+#'  }
+#' }
 generateStructure <-
 function(var, mjc, pmjc, loadings, unique) {
 

@@ -5,6 +5,13 @@
         ******************************************************
 
 ------------------------------------------
+- Changes in nFactors 2.4.1.2 (2025-06-01)
+------------------------------------------
+Use of GPL-3 license.
+
+Clean Roxygen documentation.
+
+------------------------------------------
 - Changes in nFactors 2.4.0 (2020-03-20) -
 ------------------------------------------
 Use of the function methodss::class1() instead of the function class().
